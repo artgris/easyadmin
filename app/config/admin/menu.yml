@@ -1,0 +1,13 @@
+easy_admin:
+    design:
+        menu:
+          - label: 'Users'
+            icon: 'users'
+            children:
+                - entity: 'UserAdmin'
+                  icon: 'shield'
+                - entity: 'User'
+                  icon: 'user'
+      #            params: { sortField: 'lastLogin' }
+      #            children:
+      #              - { label: 'Add User', icon: 'user', route: '' }

@@ -1,0 +1,46 @@
+easy_admin:
+    entities:
+        UserAdmin:
+            class: AppBundle\Entity\User
+            list:
+                fields: ['username', 'email','enabled', 'lastLogin']
+                sort: ['lastLogin', 'ASC']
+                dql_filter: "entity.roles LIKE '%%ROLE_ADMIN%%'"
+            form:
+                fields:
+                    - username
+                    - email
+                    - enabled
+                    # if administrators are allowed to edit users' passwords and roles, add this:
+                    - { property: 'plainPassword', type: 'text', type_options: { required: false } }
+                    - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
+                edit:
+                    fields:
+                        - { property: 'plainPassword', type_options: { required: false} }
+                    form_options: { validation_groups: ['Profile'] }
+                new:
+                    fields:
+                        - { property: 'plainPassword', type_options: { required: true} }
+                    form_options: { validation_groups: ['Registration'] }
+        User:
+              class: AppBundle\Entity\User
+              list:
+                  fields: ['username', 'email','enabled', 'lastLogin']
+                  sort: ['lastLogin', 'ASC']
+                  dql_filter: "entity.roles NOT LIKE '%%ROLE_ADMIN%%'"
+              form:
+                  fields:
+                      - username
+                      - email
+                      - enabled
+                      # if administrators are allowed to edit users' passwords and roles, add this:
+                      - { property: 'plainPassword', type: 'text', type_options: { required: false } }
+                      - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER'} } }
+                  edit:
+                      fields:
+                          - { property: 'plainPassword', type_options: { required: false} }
+                      form_options: { validation_groups: ['Profile'] }
+                  new:
+                      fields:
+                          - { property: 'plainPassword', type_options: { required: true} }
+                      form_options: { validation_groups: ['Registration'] }
