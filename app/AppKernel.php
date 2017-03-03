@@ -18,6 +18,13 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
 	        new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(),
 	        new FOS\UserBundle\FOSUserBundle(),
+
+	        new Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle(),
+	        new JMS\TranslationBundle\JMSTranslationBundle(),
+	        new JMS\DiExtraBundle\JMSDiExtraBundle($this),
+	        new JMS\AopBundle\JMSAopBundle(),
+	        new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
+	        new A2lix\TranslationFormBundle\A2lixTranslationFormBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

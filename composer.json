@@ -30,7 +30,15 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "twig/twig": "^1.0||^2.0",
         "javiereguiluz/easyadmin-bundle": "^1.16",
-        "friendsofsymfony/user-bundle": "~2.0@dev"
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+
+        "jms/translation-bundle": "dev-master",
+        "jms/di-extra-bundle": "dev-master",
+        "jms/i18n-routing-bundle": "dev-master",
+        "a2lix/translation-form-bundle": "2.*",
+        "knplabs/doctrine-behaviors": "~1.1",
+
+        "twig/twig": "1.*"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

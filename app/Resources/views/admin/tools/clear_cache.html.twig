@@ -1,0 +1,9 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+
+{% block content_title %}{{ 'menu.cc'|trans }}{% endblock %}
+
+{% block main %}
+
+    <a class="btn btn-success" href="{{ path('tools_clear_cache') }}">{{ 'button.cc.again'|trans }}</a>
+
+{% endblock %}

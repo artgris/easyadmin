@@ -1,0 +1,136 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block head_stylesheets %}
+    {{ parent() }}
+    <style>
+        header.main-header,
+        aside.main-sidebar {
+            display: none;
+        }
+
+        .wrapper {
+            background: #F5F5F5;
+        }
+
+        .fixed .content-wrapper {
+            margin-left: 0;
+            padding-top: 0;
+        }
+
+        body#welcome .content-wrapper {
+            margin-left: 0;
+        }
+
+        body#welcome #main .box {
+            margin: 0 auto;
+            max-width: 95%;
+            min-height: 150px;
+            padding: 1em;
+            width: 500px
+        }
+
+        body#welcome #main .box--primary {
+            background: #FFF;
+            border: 1px solid #EEE;
+            box-shadow: 0 0 3px #CCC;
+            padding: 2em;
+        }
+
+        body#welcome #main .box h1 {
+            font-size: 21px;
+            font-weight: bold;
+            margin: 0 0 .5em;
+        }
+
+        body#welcome #main .box a {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        body#welcome #main .box code {
+            background: #F0F0F0;
+            color: inherit;
+        }
+
+        body.new .large input.form-control,
+        body.edit .large input.form-control,
+        body.show .large div.form-control {
+            font-size: 21px;
+            height: auto;
+            padding: 7px;
+        }
+
+        @media (min-width: 768px) {
+            body#welcome #main .box {
+                margin-top: 1em;
+            }
+
+            body#welcome #main .box h1 {
+                font-size: 24px;
+            }
+
+            body#welcome #main .box .login-help {
+                color: #777;
+                margin-top: 15px;
+            }
+        }
+
+    </style>
+{% endblock %}
+
+{% block page_title 'Admin' %}
+{% block body_id 'welcome' %}
+
+{% block header '' %}
+{% block sidebar '' %}
+{% block main %}
+
+    <div class="box box--primary">
+        <div class="row">
+            <h1 class="col-sm-12">
+                <i class="fa fa-lock"></i>
+                Log in to start using the backend
+            </h1>
+            <div class="col-sm-8">
+                <form action="{{ path("fos_user_security_check") }}" method="post">
+                    {% if error %}
+                        <div class="has-error">
+                            <p class="error-block">
+                                <span class="label label-danger">
+                                    {{ 'errors'|transchoice(1, domain = 'EasyAdminBundle') }}
+                                </span>
+                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                            </p>
+                        </div>
+                    {% endif %}
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+
+                    <div class="form-group">
+                        <label for="username">{{ 'security.login.username'|trans }}</label>
+                        <input class="form-control" type="text" id="username" name="_username" required="required"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">{{ 'security.login.password'|trans }}</label>
+                        <input class="form-control" type="password" id="password" name="_password" required="required"/>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" checked id="remember_me" name="_remember_me" value="on"/>
+                            {{ 'security.login.remember_me'|trans }}
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" id="_submit" name="_submit">{{ 'security.login.submit'|trans }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+User: 'Rôle User'
+UserAdmin: 'Rôle Admin'
+
+button:
+    cc:
+        again: 'Vider encore le cache '
+
+    dsv:
+        again: 'Vérifier encore la base de donnée'
+
+menu:
+    cc: 'Vider le cache'
+    dsv: 'Vérifier la BDD'
+    settings: Paramètres
+    translate: Traductions
+    user: Utilisateurs
+
+message:
+    cc: 'Cache vidé avec succès'
+
+success:
+    delete:
+        message: 'Élément supprimé avec succés'
+
+    persist:
+        message: 'Élément ajouté avec succés'
+
+    update:
+        message: 'Élément mis à jour avec succés'

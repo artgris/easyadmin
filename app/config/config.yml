@@ -78,3 +78,34 @@ fos_user:
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
+
+jms_translation:
+    configs:
+        app:
+            dirs: ['%kernel.root_dir%/../src/AppBundle/Controller', "%kernel.root_dir%/Resources/views"]
+            output_dir: '%kernel.root_dir%/Resources/translations'
+            output-format: yml
+            excluded_names: ["*TestCase.php", "*Test.php"]
+#            extractors: [jms_i18n_routing]
+            extractors: []
+            keep: true
+            ignored_domains: ['FOSUserBundle']
+
+jms_i18n_routing:
+    default_locale: fr
+    locales: [en, fr]
+    strategy: prefix_except_default
+
+a2lix_translation_form:
+    locales: [en, fr]
+#    default_required: false
+    default_locale: en
+    manager_registry: doctrine
+
+knp_doctrine_behaviors:
+    blameable:      false
+    geocodable:     ~     # Here null is converted to false
+    loggable:       true
+    sluggable:      true
+    soft_deletable: false
+    translatable: true

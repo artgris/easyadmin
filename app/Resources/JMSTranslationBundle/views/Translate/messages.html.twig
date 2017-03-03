@@ -1,0 +1,62 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Translation</th>
+        <th>Additional Information</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for id, message in messages %}
+        <tr>
+            <td>
+                <a class="jms-translation-anchor" id="{{ id }}"/>
+                <p><abbr title="{{ id }}">{{ id|slice(0, 25) }}{% if id|length > 25 %}...{% endif %}</abbr></p>
+            </td>
+            <td>
+                <textarea data-id="{{ id }}"  class="form-control col-md-8"  {% if isWriteable is sameas(false) %} readonly="readonly"{% endif %}>{{ message.localeString }}</textarea></td>
+            <td>
+                {% if message.meaning is not empty %}
+                    <h6>Meaning</h6>
+                    <p>{{ message.meaning }}</p>
+                {% endif %}
+
+                {% if alternativeMessages[id] is defined %}
+                    <h6>Alternative Translations</h6>
+                    {% for locale, altMessage in alternativeMessages[id] %}
+                        <p>
+                            <strong>{{ locale }}:</strong>
+                        <pre>{{ altMessage.localeString }}</pre>
+                        </p>
+                    {% endfor %}
+                {% endif %}
+
+                {% if message.sources|length > 0 %}
+                    <h6>Sources</h6>
+                    <ul>
+                        {% for source in message.sources %}
+                            {%- set link = source.path|file_link(source.line) %}
+                            {%- if link %}<a href="{{ link }}" title="{{ source }}">{% else %}<span>{% endif %}
+                            <li class="jms-sources-list-item truncate-left">{{ source }}</li>
+                            {%- if link %}</a>{% else %}</span>{% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {% if message.desc is not empty
+                and message.localeString != message.desc
+                and id != message.desc
+                and (alternativeMessages[id][sourceLanguage] is not defined
+                or alternativeMessages[id][sourceLanguage].localeString != message.desc) %}
+                    <h6>Description</h6>
+                    <p>{{ message.desc }}</p>
+                {% endif %}
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="3">No messages found</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
