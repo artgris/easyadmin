@@ -19,7 +19,6 @@ class EasyAdminSubscriber implements EventSubscriberInterface
 	/**
 	 * EasyAdminSubscriber constructor.
 	 * @param Session $session
-	 * @param DataCollectorTranslator $translator
 	 */
 	public function __construct(Session $session)
 	{
@@ -37,20 +36,20 @@ class EasyAdminSubscriber implements EventSubscriberInterface
 
 	public function addPersistFlashMessage(GenericEvent $event)
 	{
-		$this->addFlasBag('success.persist.message');
+		$this->addFlashBag('success.persist.message');
 	}
 
 	public function addUpdateFlashMessage(GenericEvent $event)
 	{
-		$this->addFlasBag('success.update.message');
+		$this->addFlashBag('success.update.message');
 	}
 
 	public function addDeleteFlashMessage(GenericEvent $event)
 	{
-		$this->addFlasBag('success.delete.message');
+		$this->addFlashBag('success.delete.message');
 	}
 
-	private function addFlasBag($message)
+	private function addFlashBag($message)
 	{
 		return $this->session->getFlashBag()->add('success', $message);
 	}
