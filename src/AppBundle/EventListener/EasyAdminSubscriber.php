@@ -15,7 +15,6 @@ class EasyAdminSubscriber implements EventSubscriberInterface
 	 */
 	private $session;
 
-
 	/**
 	 * EasyAdminSubscriber constructor.
 	 * @param Session $session

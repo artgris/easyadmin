@@ -1,29 +1,23 @@
 easy_admin:
     design:
         menu:
+          - label: 'menu.dashboard'
+            route: 'admin_dashboard'
+            icon: 'dashboard'
+            default: true
           - label: 'menu.user'
             icon: 'users'
-            children:
-                - entity: 'UserAdmin'
-                  icon: 'shield'
-                  default: true
-                - entity: 'User'
-                  icon: 'user'
+            entity: 'User'
+            icon: 'shield'
           - label: 'menu.settings'
             icon: 'wrench'
             children:
                 - label: 'menu.cc'
-                  route: 'tools_clear_cache'
+                  route: 'admin_tools_cc'
                   icon: 'eraser'
                 - label: 'menu.dsv'
-                  route: 'tools_checkdatabase'
+                  route: 'admin_tools_checkdatabase'
                   icon: 'database'
                 - label: 'menu.translate'
                   route: 'jms_translation_index'
                   icon: 'flag'
-
-
-
-      #            params: { sortField: 'lastLogin' }
-      #            children:
-      #              - { label: 'Add User', icon: 'user', route: '' }

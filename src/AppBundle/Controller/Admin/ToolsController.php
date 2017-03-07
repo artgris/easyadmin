@@ -1,8 +1,9 @@
 <?php
 
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Admin;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -12,12 +13,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/admin/tools")
+ * @author Arthur Gribet <a.gribet@gmail.com>
+*  @Security("has_role('ROLE_SUPER_ADMIN')")
  */
 class ToolsController extends Controller
 {
 
 	/**
-	 * @Route("/clearcache", name="tools_clear_cache")
+	 * @Route("/clearcache", name="admin_tools_cc")
 	 */
 	public function clearCacheAction()
 	{
@@ -29,15 +32,15 @@ class ToolsController extends Controller
 
 
 	/**
-	 * @Route("/checkdatabase", name="tools_checkdatabase")
+	 * @Route("/checkdatabase", name="admin_tools_checkdatabase")
 	 */
 	public function checkDatabaseAction()
 	{
 		$commande = [
 			'command' => 'd:s:v',
 		];
-		$content = $this->createCommande($commande);
-		$this->addFlash('success', $content);
+		$output = $this->createCommande($commande);
+		$this->addFlash('success', $output);
 		return $this->render(':admin/tools:checkdatabase.html.twig');
 
 	}

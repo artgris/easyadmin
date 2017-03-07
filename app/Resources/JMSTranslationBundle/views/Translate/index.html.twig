@@ -1,6 +1,8 @@
 {#{% extends "JMSTranslationBundle::base.html.twig" %}#}
 {% extends '@EasyAdmin/default/layout.html.twig' %}
 
+{% block content_title %}{{ 'menu.translate'|trans }}{% endblock %}
+
 {% block body_javascript %}
     {{ parent() }}
     {#<script language="javascript" type="text/javascript" src="{{ asset("bundles/jmstranslation/js/jquery.js") }}"></script>#}

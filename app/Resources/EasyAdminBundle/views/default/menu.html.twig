@@ -44,7 +44,6 @@
                     {% set havChildrenActive = true %}
                 {% endif %}
             {% endfor %}
-
             <li class="{{ item.type == 'divider' ? 'header' }} {{ item.children is not empty ? 'treeview' }} {{ keyValue.0 in item|keys and item[keyValue.0] == keyValue.1 ? 'active' }} {{ havChildrenActive ? 'submenu-active active' }}">
                 {{ helper.render_menu_item(item, _entity_config.translation_domain|default('messages')) }}
                 {% if item.children|default([]) is not empty %}
@@ -58,7 +57,14 @@
                 {% endif %}
             </li>
         {% endfor %}
+        <li>
+            <a href="{{ path('fos_user_security_logout') }}">
+                <i class="fa fa-sign-out"></i>
+                <span>{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</span>
+            </a>
+        </li>
     {% endblock main_menu %}
 </ul>
 
-{% block main_menu_after %}{% endblock %}
+{% block main_menu_after %}
+{% endblock %}

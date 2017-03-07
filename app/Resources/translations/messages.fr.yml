@@ -10,6 +10,7 @@ button:
 
 menu:
     cc: 'Vider le cache'
+    dashboard: 'Tableau de bord'
     dsv: 'Vérifier la BDD'
     settings: Paramètres
     translate: Traductions
@@ -27,3 +28,5 @@ success:
 
     update:
         message: 'Élément mis à jour avec succés'
+
+loginpage.message: "Interface d'administration"
