@@ -29,9 +29,11 @@ class DashboardController extends Controller
 	private function getService()
 	{
 		$key_file_location = $this->getParameter('kernel.root_dir') . '/../src/AppBundle/Keyfile/test-4adb54f2f38d.json';
-		$serviceAccount = new ServiceAccountCredentials(Google_Service_Analytics::ANALYTICS_READONLY, $key_file_location);
-		$serviceAccount->fetchAuthToken();
-		return $serviceAccount->getLastReceivedToken();
+		if (file_exists($key_file_location)) {
+			$serviceAccount = new ServiceAccountCredentials(Google_Service_Analytics::ANALYTICS_READONLY, $key_file_location);
+			$serviceAccount->fetchAuthToken();
+			return $serviceAccount->getLastReceivedToken();
+		}
 	}
 
 }
