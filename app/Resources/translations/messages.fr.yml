@@ -1,5 +1,4 @@
-User: 'Rôle User'
-UserAdmin: 'Rôle Admin'
+User: Utilisateur
 
 button:
     cc:
@@ -7,6 +6,9 @@ button:
 
     dsv:
         again: 'Vérifier encore la base de donnée'
+
+loginpage:
+    message: 'Interface d''administration'
 
 menu:
     cc: 'Vider le cache'
@@ -28,5 +30,3 @@ success:
 
     update:
         message: 'Élément mis à jour avec succés'
-
-loginpage.message: "Interface d'administration"

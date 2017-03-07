@@ -10,7 +10,6 @@ use JavierEguiluz\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdmin
 class AdminController extends BaseAdminController
 {
 
-
 	public function createNewUserEntity()
 	{
 		return $this->get('fos_user.user_manager')->createUser();
@@ -25,6 +24,5 @@ class AdminController extends BaseAdminController
 	{
 		$this->get('fos_user.user_manager')->updateUser($user, false);
 	}
-
 
 }

@@ -5,6 +5,7 @@ namespace AppBundle\Controller\Admin;
 use Google\Auth\Credentials\ServiceAccountCredentials;
 use Google_Client;
 use Google_Service_Analytics;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -20,13 +21,14 @@ class DashboardController extends Controller
 	public function indexAction()
 	{
 		$access_token = $this->getService();
-
 		return $this->render(':admin/dashboard:index.html.twig', [
-			'ACCESS_TOKEN_FROM_SERVICE_ACCOUNT' => $access_token['access_token']
-		]);
+				'ACCESS_TOKEN_FROM_SERVICE_ACCOUNT' => $access_token['access_token']
+			]
+		);
 	}
 
-	private function getService()
+	private
+	function getService()
 	{
 		$key_file_location = $this->getParameter('kernel.root_dir') . '/../src/AppBundle/Keyfile/test-4adb54f2f38d.json';
 		if (file_exists($key_file_location)) {
@@ -34,6 +36,7 @@ class DashboardController extends Controller
 			$serviceAccount->fetchAuthToken();
 			return $serviceAccount->getLastReceivedToken();
 		}
+		return null;
 	}
 
 }

@@ -10,7 +10,7 @@ parameters:
     locale: fr
 
 framework:
-    #esi:             ~
+    esi: { enabled: true }
     translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:

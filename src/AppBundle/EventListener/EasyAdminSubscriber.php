@@ -27,23 +27,24 @@ class EasyAdminSubscriber implements EventSubscriberInterface
 	public static function getSubscribedEvents()
 	{
 		return array(
-			EasyAdminEvents::POST_PERSIST => array('addPersistFlashMessage'),
-			EasyAdminEvents::POST_UPDATE => array('addUpdateFlashMessage'),
-			EasyAdminEvents::POST_DELETE => array('addDeleteFlashMessage'),
+//			EasyAdminEvents::POST_PERSIST => array('postPersitAction'),
+//			EasyAdminEvents::POST_UPDATE => array('postUpdateAction'),
+//			EasyAdminEvents::POST_DELETE => array('postDeleteAction'),
 		);
 	}
 
-	public function addPersistFlashMessage(GenericEvent $event)
+	public function postPersitAction(GenericEvent $event)
 	{
 		$this->addFlashBag('success.persist.message');
 	}
 
-	public function addUpdateFlashMessage(GenericEvent $event)
+	public function postUpdateAction(GenericEvent $event)
 	{
+		// problème pour xhr, s'affiche après :S
 		$this->addFlashBag('success.update.message');
 	}
 
-	public function addDeleteFlashMessage(GenericEvent $event)
+	public function postDeleteAction(GenericEvent $event)
 	{
 		$this->addFlashBag('success.delete.message');
 	}

@@ -12,7 +12,7 @@ easy_admin:
                     - enabled
                     # if administrators are allowed to edit users' passwords and roles, add this:
                     - { property: 'plainPassword', type: 'text', type_options: { required: false } }
-                    - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN' }} }
+                    - { property: 'roles', type: 'choice', type_options: { multiple: true, attr: { data-widget: 'select2' }, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN' }} }
             edit:
                 fields:
                     - { property: 'plainPassword', type_options: { required: false} }
