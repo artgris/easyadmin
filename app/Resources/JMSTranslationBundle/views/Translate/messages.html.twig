@@ -1,4 +1,9 @@
 <table class="table table-striped">
+    <colgroup>
+        <col class="col-xs-3">
+        <col class="col-xs-3">
+        <col class="col-xs-3">
+    </colgroup>
     <thead>
     <tr>
         <th>ID</th>
@@ -14,7 +19,11 @@
                 <p><abbr title="{{ id }}">{{ id|slice(0, 25) }}{% if id|length > 25 %}...{% endif %}</abbr></p>
             </td>
             <td>
-                <textarea data-id="{{ id }}"  class="form-control col-md-8"  {% if isWriteable is sameas(false) %} readonly="readonly"{% endif %}>{{ message.localeString }}</textarea></td>
+                <div class="form-group">
+                <textarea data-id="{{ id }}"
+                          class="span6 form-control"{% if isWriteable is same as(false) %} readonly="readonly"{% endif %}>{{ message.localeString }}</textarea>
+                </div>
+            </td>
             <td>
                 {% if message.meaning is not empty %}
                     <h6>Meaning</h6>

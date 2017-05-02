@@ -29,7 +29,7 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "javiereguiluz/easyadmin-bundle": "^1.16",
-        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "friendsofsymfony/user-bundle": "^2.0",
 
         "jms/translation-bundle": "dev-master",
         "jms/di-extra-bundle": "dev-master",
@@ -37,7 +37,6 @@
         "a2lix/translation-form-bundle": "2.*",
         "knplabs/doctrine-behaviors": "~1.1",
 
-        "twig/twig": "1.*",
         "google/apiclient": "^2.0"
     },
     "require-dev": {
