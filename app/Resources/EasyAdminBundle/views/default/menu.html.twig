@@ -38,24 +38,30 @@
         {% set keyValue = entity ? ["entity",entity] : ["route",route] %}
 
         {% for item in items %}
-            {% set havChildrenActive = false %}
-            {% for children in item.children %}
-                {% if keyValue.0 in children|keys and children[keyValue.0] == keyValue.1 %}
-                    {% set havChildrenActive = true %}
-                {% endif %}
-            {% endfor %}
-            <li class="{{ item.type == 'divider' ? 'header' }} {{ item.children is not empty ? 'treeview' }} {{ keyValue.0 in item|keys and item[keyValue.0] == keyValue.1 ? 'active' }} {{ havChildrenActive ? 'submenu-active active' }}">
-                {{ helper.render_menu_item(item, _entity_config.translation_domain|default('messages')) }}
-                {% if item.children|default([]) is not empty %}
-                    <ul class="treeview-menu">
-                        {% for subitem in item.children %}
-                            <li class="{{ subitem.type == 'divider' ? 'header' }} {{ keyValue.0 in subitem|keys and subitem[keyValue.0] == keyValue.1 ? 'active' }} ">
-                                {{ helper.render_menu_item(subitem, _entity_config.translation_domain|default('messages')) }}
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </li>
+            {% set roleMenuParent = item.role is defined ? is_granted(item.role) : true %}
+            {% if roleMenuParent %}
+                {% set havChildrenActive = false %}
+                {% for children in item.children %}
+                    {% if keyValue.0 in children|keys and children[keyValue.0] == keyValue.1 %}
+                        {% set havChildrenActive = true %}
+                    {% endif %}
+                {% endfor %}
+                <li class="{{ item.type == 'divider' ? 'header' }} {{ item.children is not empty ? 'treeview' }} {{ keyValue.0 in item|keys and item[keyValue.0] == keyValue.1 ? 'active' }} {{ havChildrenActive ? 'submenu-active active' }}">
+                    {{ helper.render_menu_item(item, _entity_config.translation_domain|default('messages')) }}
+                    {% if item.children|default([]) is not empty %}
+                        <ul class="treeview-menu">
+                            {% for subitem in item.children %}
+                                {% set roleMenuChild = subitem.role is defined ? is_granted(subitem.role) : true %}
+                                {% if roleMenuChild %}
+                                    <li class="{{ subitem.type == 'divider' ? 'header' }} {{ keyValue.0 in subitem|keys and subitem[keyValue.0] == keyValue.1 ? 'active' }} ">
+                                        {{ helper.render_menu_item(subitem, _entity_config.translation_domain|default('messages')) }}
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endif %}
         {% endfor %}
     {% endblock main_menu %}
 </ul>

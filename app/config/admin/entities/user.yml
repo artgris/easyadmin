@@ -3,7 +3,12 @@ easy_admin:
         User:
             class: AppBundle\Entity\User
             list:
-                fields: ['username', 'email','enabled', 'lastLogin', 'roles']
+                fields:
+                  - 'username'
+                  - 'email'
+                  - 'enabled'
+                  - 'lastLogin'
+                  - 'roles'
                 sort: ['lastLogin', 'ASC']
             form:
                 fields:

@@ -30,3 +30,8 @@ success:
 
     update:
         message: 'Élément mis à jour avec succés'
+
+Enabled: 'Actif'
+Last login: 'Dernière connexion'
+Roles : Rôles
+Plain password: Mot de passe
