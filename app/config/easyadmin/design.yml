@@ -16,6 +16,7 @@ easy_admin: # http://symfony.com/doc/current/bundles/EasyAdminBundle/book/config
         color_scheme: 'dark'
         brand_color: '#000000'
 #        form_theme: 'horizontal'
+        form_theme: ['horizontal', 'VichUploaderBundle:Form:fields.html.twig']
         assets:
             css:
               - "/css/admin.css"
