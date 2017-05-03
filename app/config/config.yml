@@ -2,7 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: admin/ }
+    - { resource: easyadmin/ }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -99,7 +99,7 @@ jms_i18n_routing:
 a2lix_translation_form:
     locales: [en, fr]
 #    default_required: false
-    default_locale: en
+    default_locale: fr
     manager_registry: doctrine
 
 knp_doctrine_behaviors:
@@ -109,3 +109,10 @@ knp_doctrine_behaviors:
     sluggable:      true
     soft_deletable: false
     translatable: true
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_images:
+            uri_prefix:         '%app.path.product_images%'
+            upload_destination: '%kernel.root_dir%/../web/images/products'

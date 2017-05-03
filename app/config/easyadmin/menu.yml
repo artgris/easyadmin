@@ -9,6 +9,10 @@ easy_admin:
             icon: 'users'
             entity: 'User'
             icon: 'shield'
+          - label: 'menu.product'
+            icon: 'Product'
+            entity: 'Product'
+            icon: 'product'
           - label: 'menu.settings'
             icon: 'wrench'
             children:
@@ -21,3 +25,8 @@ easy_admin:
                 - label: 'menu.translate'
                   route: 'jms_translation_index'
                   icon: 'flag'
+
+          - label: 'menu.website'
+            route: 'homepage'
+            target: '_blank'
+            icon: 'home'

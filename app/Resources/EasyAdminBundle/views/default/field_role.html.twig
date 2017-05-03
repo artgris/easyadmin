@@ -1,0 +1,20 @@
+{% if view == 'show' %}
+    {% if value|length > 0 %}
+        <ul>
+            {% for element in value %}
+                <li>{{ element }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="empty collection-empty">
+            {{ include(entity_config.templates.label_empty) }}
+        </div>
+    {% endif %}
+{% else %}
+
+    {% set colors = field_options.label_colors %}
+    {% for val in value %}
+        <span class="label label-{{ colors[val] }}">{{ val }}</span>
+    {% endfor %}
+
+{% endif %}

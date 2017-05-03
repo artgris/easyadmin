@@ -25,6 +25,7 @@ class AppKernel extends Kernel
 	        new JMS\AopBundle\JMSAopBundle(),
 	        new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
 	        new A2lix\TranslationFormBundle\A2lixTranslationFormBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

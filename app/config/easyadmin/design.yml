@@ -1,0 +1,24 @@
+easy_admin: # http://symfony.com/doc/current/bundles/EasyAdminBundle/book/configuration-reference.html
+    site_name: 'Admin'
+    formats:
+        date: 'd/m/Y'
+        datetime: 'd/m/Y H:i:s'
+        time: 'H:i'
+        number: '%.2f'
+    list:
+       actions:
+            - { name: 'edit', icon: 'pencil' }
+            - { name: 'delete', icon: 'trash-o' }
+#       max_results: 15
+#    show:
+#      max_results: 10
+    design:
+        color_scheme: 'dark'
+        brand_color: '#000000'
+#        form_theme: 'horizontal'
+        assets:
+            css:
+              - "/css/admin.css"
+            js:
+              - "/js/admin.js"
+            favicon: '/favicon.ico'

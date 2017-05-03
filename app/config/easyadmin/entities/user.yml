@@ -1,0 +1,41 @@
+easy_admin:
+    entities:
+        User:
+            controller: AppBundle\Controller\Admin\UserController
+            class: AppBundle\Entity\User
+#            label: 'Users'
+#            help: 'Global message displayed in all views'
+            list:
+#                title: "%%entity_label%% listing"
+#                help: 'Global message displayed in all views'
+#                actions: ['show']
+#                actions: ['duplicate']
+                fields:
+                  - 'username'
+                  - { property: 'email', type: 'email'}
+                  - { property: 'enabled', sortable: false }
+                  - 'lastLogin'
+                  - { property: 'roles', template: '@EasyAdmin/default/field_role.html.twig', label_colors: {'ROLE_SUPER_ADMIN' : 'danger', 'ROLE_ADMIN' : 'warning', 'ROLE_USER' : 'primary'}}
+                sort: 'lastLogin'
+#                sort: 'createdAt'
+#                dql_filter: 'entity.id >= 0'
+            form: #'form' is applied to both 'new' and 'edit' views
+                fields:
+                    - username
+                    - email
+                    - enabled
+                    - { property: 'plainPassword', type: 'text' }
+#                    - { type: 'divider' }
+#                    - { type: 'section', label: 'Contact information', icon: 'phone', help: 'Phone number is preferred', css_class: 'danger' }
+                    # if administrators are allowed to edit users' passwords and roles, add this:
+                    - { property: 'roles', type: 'choice', type_options: { multiple: true, attr: { data-widget: 'select2' }, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN' }} }
+            edit:
+#                actions:
+#                    - { name: 'show', css_class: 'btn btn-default' }
+                fields:
+                    - { property: 'plainPassword', type_options: { required: false} }
+                form_options: { validation_groups: ['Profile'] }
+            new:
+                fields:
+                    - { property: 'plainPassword', type_options: { required: true} }
+                form_options: { validation_groups: ['Registration'] }

@@ -1,4 +1,4 @@
-User: 'Utilisateur '
+User: 'Utilisateur'
 
 button:
     cc:
@@ -17,6 +17,7 @@ menu:
     settings: Paramètres
     translate: Traductions
     user: Utilisateurs
+    website: Voir le site
 
 message:
     cc: 'Cache vidé avec succès'
