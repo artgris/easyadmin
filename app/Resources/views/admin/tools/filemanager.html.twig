@@ -1,0 +1,10 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+
+{% block content_title %}{{ 'menu.manager'|trans }}{% endblock %}
+
+{% block main %}
+
+    <iframe id="myframe" src="{{ path('file_manager', {conf:'default'}) }}" width="100%" height="600"
+            frameborder="0"></iframe>
+
+{% endblock %}

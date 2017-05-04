@@ -45,8 +45,18 @@ class ToolsController extends Controller
 
 	}
 
+    /**
+     * @Route("/manager", name="admin_tools_manager")
+     */
+    public function managerAction()
+    {
+        return $this->render(':admin/tools:filemanager.html.twig');
 
-	/**
+    }
+
+
+
+    /**
 	 * @param $commande
 	 * @return mixed
 	 */

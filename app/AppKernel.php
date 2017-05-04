@@ -29,6 +29,7 @@ class AppKernel extends Kernel
             new Arkounay\ImageBundle\ArkounayImageBundle(),
             new Arkounay\BlockI18nBundle\ArkounayBlockI18nBundle(),
             new Gregwar\ImageBundle\GregwarImageBundle(),
+            new Artgris\Bundle\FileManagerBundle\ArtgrisFileManagerBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -19,6 +19,7 @@ menu:
     user: Utilisateurs
     website: Voir le site
     bloc.text: Textes
+    manager: 'File Manager'
 
 message:
     cc: 'Cache vidé avec succès'

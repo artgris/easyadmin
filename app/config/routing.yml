@@ -17,3 +17,8 @@ JMSTranslationBundle_ui:
 
 arkounay_image:
    resource: "@ArkounayImageBundle/Resources/config/routing.yml"
+
+artgris_bundle_file_manager:
+    resource: "@ArtgrisFileManagerBundle/Controller"
+    type:     annotation
+    prefix:   /admin/_manager

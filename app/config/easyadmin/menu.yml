@@ -9,8 +9,9 @@ easy_admin:
                 - { label: 'menu.cc', route: 'admin_tools_cc', icon: 'eraser' }
                 - { label: 'menu.dsv', route: 'admin_tools_checkdatabase', icon: 'database' }
                 - { label: 'menu.translate', route: 'jms_translation_index', icon: 'flag' }
+                - { label: 'menu.manager', route: 'admin_tools_manager', icon: 'upload' }
           - label: 'Blocs'
             icon: 'square-o'
             children:
-                - { label: 'menu.bloc.text', entity: 'PageBlock'}
+                - { label: 'menu.bloc.text', entity: 'PageBlock' }
           - { label: 'Exemple', entity: 'Exemple', icon: 'terminal' }
