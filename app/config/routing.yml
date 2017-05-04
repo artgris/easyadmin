@@ -14,3 +14,6 @@ JMSTranslationBundle_ui:
     resource: "@JMSTranslationBundle/Controller/"
     type: annotation
     prefix: /admin/_trans
+
+arkounay_image:
+   resource: "@ArkounayImageBundle/Resources/config/routing.yml"

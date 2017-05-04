@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "84122cd6c93b8dc537cafe15b2887b99",
-    "content-hash": "d86b30788e7280b5b9072154c4385f12",
+    "hash": "b9cc1bc16377ca675b6efc5b5595809a",
+    "content-hash": "b4007922af3a9fe417af0fc6de868f4a",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -72,6 +72,139 @@
                 "translation"
             ],
             "time": "2016-04-11 12:49:49"
+        },
+        {
+            "name": "arkounay/block-bundle-i18n",
+            "version": "1.0.2",
+            "target-dir": "Arkounay/BlockI18nBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Arkounay/BlockI18nBundle.git",
+                "reference": "9de69f8e3444c9dd4706af790cf66801b5d8a183"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Arkounay/BlockI18nBundle/zipball/9de69f8e3444c9dd4706af790cf66801b5d8a183",
+                "reference": "9de69f8e3444c9dd4706af790cf66801b5d8a183",
+                "shasum": ""
+            },
+            "require": {
+                "a2lix/translation-form-bundle": "2.*",
+                "knplabs/doctrine-behaviors": "~1.1",
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "^3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Arkounay\\BlockI18nBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Antonin M",
+                    "email": "arkanen@gmail.com"
+                }
+            ],
+            "description": "WYSIWIG HTML editable blocks and entities bundle (multilingual version)",
+            "homepage": "https://github.com/Arkounay/BlockI18nBundle",
+            "keywords": [
+                "bundle",
+                "inline",
+                "symfony",
+                "tinymce",
+                "wysiwig"
+            ],
+            "time": "2017-05-04 14:10:40"
+        },
+        {
+            "name": "arkounay/image-bundle",
+            "version": "2.1.1",
+            "target-dir": "Arkounay/ImageBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Arkounay/ImageBundle.git",
+                "reference": "0115bd98a106f47d6d4bb37549e26e16e2421dd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Arkounay/ImageBundle/zipball/0115bd98a106f47d6d4bb37549e26e16e2421dd1",
+                "reference": "0115bd98a106f47d6d4bb37549e26e16e2421dd1",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/doctrine-bundle": "^1.6",
+                "doctrine/orm": "^2.5",
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "^3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Arkounay\\ImageBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Antonin M",
+                    "email": "arkanen@gmail.com"
+                }
+            ],
+            "description": "Easier image upload form bundle with Doctrine",
+            "homepage": "https://github.com/Arkounay/ImageBundle",
+            "keywords": [
+                "bundle",
+                "doctrine",
+                "form",
+                "image",
+                "symfony"
+            ],
+            "time": "2017-01-30 07:49:03"
+        },
+        {
+            "name": "artgris/filemanager-bundle",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/artgris/FileManagerBundle.git",
+                "reference": "4d01808ca462690d0c90729ededcf20322dd9b91"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/artgris/FileManagerBundle/zipball/4d01808ca462690d0c90729ededcf20322dd9b91",
+                "reference": "4d01808ca462690d0c90729ededcf20322dd9b91",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.9 || ^7.0",
+                "symfony/framework-bundle": "^2.8 || ^3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Artgris\\Bundle\\FileManagerBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arthur Gribet",
+                    "email": "a.gribet@gmail.com"
+                }
+            ],
+            "description": "FileManager is a simple Multilingual File Manager Bundle for Symfony",
+            "homepage": "https://github.com/artgris/FileManagerBundle",
+            "keywords": [
+                "bundle",
+                "file manager",
+                "symfony"
+            ],
+            "time": "2017-04-25 15:35:00"
         },
         {
             "name": "behat/transliterator",
@@ -1210,6 +1343,151 @@
             "time": "2016-11-02 14:59:14"
         },
         {
+            "name": "gregwar/cache",
+            "version": "v1.0.12",
+            "target-dir": "Gregwar/Cache",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gregwar/Cache.git",
+                "reference": "305d0f5a12c0beecbbd7e1de236f59f39e0c0ac3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gregwar/Cache/zipball/305d0f5a12c0beecbbd7e1de236f59f39e0c0ac3",
+                "reference": "305d0f5a12c0beecbbd7e1de236f59f39e0c0ac3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Gregwar\\Cache": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gregwar",
+                    "email": "g.passault@gmail.com"
+                }
+            ],
+            "description": "A lightweight file-system cache system",
+            "keywords": [
+                "cache",
+                "caching",
+                "file-system",
+                "system"
+            ],
+            "time": "2016-09-23 08:16:04"
+        },
+        {
+            "name": "gregwar/image",
+            "version": "v2.0.21",
+            "target-dir": "Gregwar/Image",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gregwar/Image.git",
+                "reference": "c9899e4c71009338f89a8c63c12c681692533ede"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gregwar/Image/zipball/c9899e4c71009338f89a8c63c12c681692533ede",
+                "reference": "c9899e4c71009338f89a8c63c12c681692533ede",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "gregwar/cache": "^1.0.6",
+                "php": "^5.3 || ^7.0"
+            },
+            "require-dev": {
+                "sllh/php-cs-fixer-styleci-bridge": "~1.0",
+                "symfony/phpunit-bridge": "^2.7.4 || ^3.0"
+            },
+            "suggest": {
+                "behat/transliterator": "Transliterator provides ability to set non-latin1 pretty names"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Gregwar\\Image": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Passault",
+                    "email": "g.passault@gmail.com",
+                    "homepage": "http://www.gregwar.com/"
+                }
+            ],
+            "description": "Image handling",
+            "homepage": "https://github.com/Gregwar/Image",
+            "keywords": [
+                "gd",
+                "image"
+            ],
+            "time": "2017-01-24 09:29:39"
+        },
+        {
+            "name": "gregwar/image-bundle",
+            "version": "v2.1.3",
+            "target-dir": "Gregwar/ImageBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gregwar/ImageBundle.git",
+                "reference": "2568a457478501500f976e0a3fd5d7045fdcbbba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gregwar/ImageBundle/zipball/2568a457478501500f976e0a3fd5d7045fdcbbba",
+                "reference": "2568a457478501500f976e0a3fd5d7045fdcbbba",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "gregwar/image": "2.*",
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "^2.3 || ^3.0",
+                "twig/twig": "^1.12 || ^2.0"
+            },
+            "require-dev": {
+                "sllh/php-cs-fixer-styleci-bridge": "~1.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Gregwar\\ImageBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Passault",
+                    "email": "g.passault@gmail.com",
+                    "homepage": "http://www.gregwar.com/"
+                }
+            ],
+            "description": "Image handling bundle",
+            "homepage": "https://github.com/Gregwar/ImageBundle",
+            "keywords": [
+                "image",
+                "symfony"
+            ],
+            "time": "2017-01-06 15:19:05"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "6.2.3",
             "source": {
@@ -1964,7 +2242,7 @@
             ],
             "authors": [
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 }
             ],

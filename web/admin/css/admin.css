@@ -1,0 +1,14 @@
+body {
+    display: inherit;
+}
+
+.arkounay-image .td-label label {
+    overflow: initial;
+}
+.collection-empty {
+    display: none;
+}
+
+.a2lix_translations .nav {
+    margin-bottom: 10px;
+}

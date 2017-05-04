@@ -6,20 +6,33 @@ easy_admin: # http://symfony.com/doc/current/bundles/EasyAdminBundle/book/config
         time: 'H:i'
         number: '%.2f'
     list:
+       title: '%%entity_label%%'
        actions:
             - { name: 'edit', icon: 'pencil' }
             - { name: 'delete', icon: 'trash-o' }
+    show:
+          title: 'Éditer %%entity_label%% (#%%entity_id%%)'
+    new:
+        title: 'Créer %%entity_label%%'
 #       max_results: 15
 #    show:
 #      max_results: 10
     design:
-        color_scheme: 'dark'
-        brand_color: '#000000'
+#        color_scheme: 'dark'
+#        brand_color: '#4B4B4B'
+#        brand_color: '#000000'
 #        form_theme: 'horizontal'
         form_theme: ['horizontal', 'VichUploaderBundle:Form:fields.html.twig']
         assets:
             css:
-              - "/css/admin.css"
+              - 'bundles/arkounayimage/arkounay_image_bundle.css'
+              - 'admin/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css'
+              - "admin/css/admin.css"
             js:
-              - "/js/admin.js"
+              - 'admin/plugins/tinymce/tinymce.min.js'
+              - 'admin/plugins/tinymce/jquery.tinymce.min.js'
+              - 'admin/plugins/moment-with-locales.js'
+              - 'admin/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js'
+              - 'admin/plugins/symfony-collection-2.0.4/jquery.collection.js'
+              - 'admin/js/admin.js'
             favicon: '/favicon.ico'

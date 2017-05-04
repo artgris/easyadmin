@@ -18,6 +18,7 @@ menu:
     translate: Traductions
     user: Utilisateurs
     website: Voir le site
+    bloc.text: Textes
 
 message:
     cc: 'Cache vidé avec succès'

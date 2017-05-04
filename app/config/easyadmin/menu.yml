@@ -1,32 +1,16 @@
 easy_admin:
     design:
         menu:
-          - label: 'menu.dashboard'
-            route: 'admin_dashboard'
-            icon: 'dashboard'
-            default: true
-          - label: 'menu.user'
-            icon: 'users'
-            entity: 'User'
-            icon: 'shield'
-          - label: 'menu.product'
-            icon: 'Product'
-            entity: 'Product'
-            icon: 'product'
+          - { label: 'menu.dashboard', route: 'admin_dashboard', icon: 'dashboard', default: true }
+          - { label: 'menu.user', icon: 'users', entity: 'User' }
           - label: 'menu.settings'
             icon: 'wrench'
             children:
-                - label: 'menu.cc'
-                  route: 'admin_tools_cc'
-                  icon: 'eraser'
-                - label: 'menu.dsv'
-                  route: 'admin_tools_checkdatabase'
-                  icon: 'database'
-                - label: 'menu.translate'
-                  route: 'jms_translation_index'
-                  icon: 'flag'
-
-          - label: 'menu.website'
-            route: 'homepage'
-            target: '_blank'
-            icon: 'home'
+                - { label: 'menu.cc', route: 'admin_tools_cc', icon: 'eraser' }
+                - { label: 'menu.dsv', route: 'admin_tools_checkdatabase', icon: 'database' }
+                - { label: 'menu.translate', route: 'jms_translation_index', icon: 'flag' }
+          - label: 'Blocs'
+            icon: 'square-o'
+            children:
+                - { label: 'menu.bloc.text', entity: 'PageBlock'}
+          - { label: 'Exemple', entity: 'Exemple', icon: 'terminal' }

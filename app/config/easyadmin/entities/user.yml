@@ -1,6 +1,7 @@
 easy_admin:
     entities:
         User:
+            label: "User"
             controller: AppBundle\Controller\Admin\UserController
             class: AppBundle\Entity\User
 #            label: 'Users'
@@ -15,7 +16,7 @@ easy_admin:
                   - { property: 'email', type: 'email'}
                   - { property: 'enabled', sortable: false }
                   - 'lastLogin'
-                  - { property: 'roles', template: '@EasyAdmin/default/field_role.html.twig', label_colors: {'ROLE_SUPER_ADMIN' : 'danger', 'ROLE_ADMIN' : 'warning', 'ROLE_USER' : 'primary'}}
+                  - { property: 'roles', template: 'admin/_fields/field_role.html.twig', label_colors: {'ROLE_SUPER_ADMIN' : 'danger', 'ROLE_ADMIN' : 'warning', 'ROLE_USER' : 'primary'}}
                 sort: 'lastLogin'
 #                sort: 'createdAt'
 #                dql_filter: 'entity.id >= 0'

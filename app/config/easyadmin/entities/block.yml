@@ -1,0 +1,14 @@
+easy_admin:
+    entities:
+        PageBlock:
+            label: "Bloc de texte"
+            class: Arkounay\BlockI18nBundle\Entity\PageBlock
+            list:
+                fields: ['id']
+            edit:
+                fields:
+                    - '-id'
+            form:
+                fields:
+                    - id
+                    - { property: 'translations', label: 'Traductions', type: 'A2lix\TranslationFormBundle\Form\Type\TranslationsType', type_options: {fields: {content: {label: Description, attr: {class: 'tinymce'}}}} }

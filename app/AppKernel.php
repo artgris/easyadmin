@@ -26,6 +26,9 @@ class AppKernel extends Kernel
 	        new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
 	        new A2lix\TranslationFormBundle\A2lixTranslationFormBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
+            new Arkounay\ImageBundle\ArkounayImageBundle(),
+            new Arkounay\BlockI18nBundle\ArkounayBlockI18nBundle(),
+            new Gregwar\ImageBundle\GregwarImageBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

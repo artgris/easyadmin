@@ -1,0 +1,23 @@
+easy_admin:
+    entities:
+        Exemple:
+            label: "Entité exemple"
+            class: AppBundle\Entity\Exemple
+            list:
+                actions:
+                     - { name: 'show', icon: 'search' }
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.exemple.images%' }
+                    - { property: 'imageArkounay', template: ':admin/_fields:field_json_image.html.twig', css_class: 'image' }
+                    - { property: 'contract', template: 'admin/_fields/field_contract.html.twig', base_path: '%app.exemple.contracts%' }
+            form:
+                  fields:
+                        - { property: 'imageFile', type: 'file' }
+                        - { property: 'contractFile', type: 'vich_file' }
+                        - { property: 'imageArkounay', type: 'Arkounay\ImageBundle\Form\JsonImageType', type_options: {allow_alt: false} }
+                        - { property: 'date', type: 'date', type_options: {widget: 'single_text', html5: false, attr: {class: 'datepicker'}, format: 'dd/MM/yyyy', required: false} }
+                        - { property: 'translations', label: 'Traductions', type: 'A2lix\TranslationFormBundle\Form\Type\TranslationsType', type_options: {fields: {title: {label: 'Titre'}, content: {label: 'Contenu', attr: {class: 'tinymce'}} }} }
+            show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.exemple.images%' }
+                    - { property: 'contract', template: 'admin/_fields/field_contract.html.twig', base_path: '%app.exemple.contracts%' }

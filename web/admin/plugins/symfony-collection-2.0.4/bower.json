@@ -1,0 +1,29 @@
+{
+    "name": "symfony-collection",
+    "homepage": "http://symfony-collection.fuz.org",
+    "description": "A jQuery plugin that manages adding, deleting and moving elements from a Symfony2 collection",
+    "main": [
+        "jquery.collection.js"
+    ],
+    "keywords": [
+        "jquery",
+        "symfony",
+        "collection",
+        "plugin",
+        "javascript"
+    ],
+    "authors": [
+        "Alain Tiemblo"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ninsuo/symfony-collection.git"
+    },
+    "bugs": "https://github.com/ninsuo/symfony-collection/issues",
+    "license": "MIT",
+    "ignore": ["*", "!jquery.collection.js", "!jquery.collection.html.twig"],
+    "dependencies": {
+        "jquery": ">=1.7",
+        "jquery-ui": ">=1.0"
+    }
+}

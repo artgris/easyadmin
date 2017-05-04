@@ -43,19 +43,22 @@ twig:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:   pdo_mysql
+        driver:   pdo_sqlite
         host:     "%database_host%"
         port:     "%database_port%"
         dbname:   "%database_name%"
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
+        types:
+            json_image: Arkounay\ImageBundle\Type\JsonImageType
+            json_images: Arkounay\ImageBundle\Type\JsonImagesType
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
         #     e.g. database_path: "%kernel.root_dir%/../var/data/data.sqlite"
         #   2. Uncomment database_path in parameters.yml.dist
         #   3. Uncomment next line:
-        #path:     "%database_path%"
+        path:     "%database_path%"
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
@@ -93,11 +96,11 @@ jms_translation:
 
 jms_i18n_routing:
     default_locale: fr
-    locales: [en, fr]
+    locales: [fr, en]
     strategy: prefix_except_default
 
 a2lix_translation_form:
-    locales: [en, fr]
+    locales: [fr, en]
 #    default_required: false
     default_locale: fr
     manager_registry: doctrine
@@ -113,6 +116,9 @@ knp_doctrine_behaviors:
 vich_uploader:
     db_driver: orm
     mappings:
-        product_images:
-            uri_prefix:         '%app.path.product_images%'
-            upload_destination: '%kernel.root_dir%/../web/images/products'
+        exemple_images:
+            uri_prefix:         '%app.exemple.images%'
+            upload_destination: '%kernel.root_dir%/../web/exemple/images'
+        exemple_contracts:
+            uri_prefix:         '%app.exemple.contracts%'
+            upload_destination: '%kernel.root_dir%/../web/exemple/contracts'
