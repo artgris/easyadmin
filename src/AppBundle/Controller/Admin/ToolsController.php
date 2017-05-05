@@ -30,7 +30,6 @@ class ToolsController extends Controller
 		return $this->render(':admin/tools:clear_cache.html.twig');
 	}
 
-
 	/**
 	 * @Route("/checkdatabase", name="admin_tools_checkdatabase")
 	 */
@@ -53,8 +52,6 @@ class ToolsController extends Controller
         return $this->render(':admin/tools:filemanager.html.twig');
 
     }
-
-
 
     /**
 	 * @param $commande
