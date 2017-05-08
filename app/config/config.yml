@@ -51,8 +51,8 @@ doctrine:
         password: "%database_password%"
         charset:  UTF8
         types:
-            json_image: Arkounay\ImageBundle\Type\JsonImageType
-            json_images: Arkounay\ImageBundle\Type\JsonImagesType
+            media: Artgris\Bundle\MediaBundle\Type\MediaType
+            media_collection: Artgris\Bundle\MediaBundle\Type\MediaCollectionType
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
         #     e.g. database_path: "%kernel.root_dir%/../var/data/data.sqlite"
@@ -127,3 +127,7 @@ artgris_file_manager:
     conf:
         default:
             dir: "../web/uploads"
+
+
+gregwar_image:
+    throw_exception: true

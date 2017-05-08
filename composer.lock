@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b9cc1bc16377ca675b6efc5b5595809a",
-    "content-hash": "b4007922af3a9fe417af0fc6de868f4a",
+    "hash": "04b09b1a6c26a534393f17ec63e3d9d1",
+    "content-hash": "7ac0e0580ccb9160b8e46c7d3b0d093d",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -119,62 +119,17 @@
             "time": "2017-05-04 14:10:40"
         },
         {
-            "name": "arkounay/image-bundle",
-            "version": "2.1.1",
-            "target-dir": "Arkounay/ImageBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Arkounay/ImageBundle.git",
-                "reference": "0115bd98a106f47d6d4bb37549e26e16e2421dd1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Arkounay/ImageBundle/zipball/0115bd98a106f47d6d4bb37549e26e16e2421dd1",
-                "reference": "0115bd98a106f47d6d4bb37549e26e16e2421dd1",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/doctrine-bundle": "^1.6",
-                "doctrine/orm": "^2.5",
-                "php": ">=5.3.3",
-                "symfony/framework-bundle": "^3.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "Arkounay\\ImageBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Antonin M",
-                    "email": "arkanen@gmail.com"
-                }
-            ],
-            "description": "Easier image upload form bundle with Doctrine",
-            "homepage": "https://github.com/Arkounay/ImageBundle",
-            "keywords": [
-                "bundle",
-                "doctrine",
-                "form",
-                "image",
-                "symfony"
-            ],
-            "time": "2017-01-30 07:49:03"
-        },
-        {
             "name": "artgris/filemanager-bundle",
-            "version": "1.0.5",
+            "version": "1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artgris/FileManagerBundle.git",
-                "reference": "4d01808ca462690d0c90729ededcf20322dd9b91"
+                "reference": "a8354ef23e692e47af7b0bb03458c62205c38fb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artgris/FileManagerBundle/zipball/4d01808ca462690d0c90729ededcf20322dd9b91",
-                "reference": "4d01808ca462690d0c90729ededcf20322dd9b91",
+                "url": "https://api.github.com/repos/artgris/FileManagerBundle/zipball/a8354ef23e692e47af7b0bb03458c62205c38fb5",
+                "reference": "a8354ef23e692e47af7b0bb03458c62205c38fb5",
                 "shasum": ""
             },
             "require": {
@@ -204,7 +159,51 @@
                 "file manager",
                 "symfony"
             ],
-            "time": "2017-04-25 15:35:00"
+            "time": "2017-05-08 12:46:03"
+        },
+        {
+            "name": "artgris/media-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/artgris/MediaBundle.git",
+                "reference": "963df92c54ad2dceccc5ea43767a03f7fad8f1b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/artgris/MediaBundle/zipball/963df92c54ad2dceccc5ea43767a03f7fad8f1b6",
+                "reference": "963df92c54ad2dceccc5ea43767a03f7fad8f1b6",
+                "shasum": ""
+            },
+            "require": {
+                "artgris/filemanager-bundle": "^1.0.10",
+                "doctrine/doctrine-bundle": "^1.6",
+                "doctrine/orm": "^2.5",
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "^3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Artgris\\Bundle\\MediaBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Arthur Gribet",
+                    "email": "a.gribet@gmail.com"
+                }
+            ],
+            "homepage": "https://github.com/Artgris/MediaBundle",
+            "keywords": [
+                "bundle",
+                "doctrine",
+                "form",
+                "media",
+                "symfony"
+            ],
+            "time": "2017-05-08 15:08:49"
         },
         {
             "name": "behat/transliterator",
@@ -2508,16 +2507,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "ab8028c93c03cc8d9c824efa75dc94f1db2369bf"
+                "reference": "f8dd0e18d2328c447dd4190fecd11ef52680d968"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/ab8028c93c03cc8d9c824efa75dc94f1db2369bf",
-                "reference": "ab8028c93c03cc8d9c824efa75dc94f1db2369bf",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/f8dd0e18d2328c447dd4190fecd11ef52680d968",
+                "reference": "f8dd0e18d2328c447dd4190fecd11ef52680d968",
                 "shasum": ""
             },
             "require": {
@@ -2596,7 +2595,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2016-10-04 00:57:04"
+            "time": "2017-05-08 05:58:35"
         },
         {
             "name": "psr/cache",
@@ -3999,7 +3998,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "jms/di-extra-bundle": 20,
-        "jms/i18n-routing-bundle": 20
+        "jms/i18n-routing-bundle": 20,
+        "artgris/media-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

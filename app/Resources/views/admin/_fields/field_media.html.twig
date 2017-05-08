@@ -1,0 +1,20 @@
+{% if view == 'show' %}
+    {% if value.path is defined and value.path %}
+        <img src="{{ value.path }}">
+    {% endif %}
+{% else %}
+    {% if value.path is defined and value.path is not null %}
+        {% set _lightbox_id = 'easyadmin-lightbox-' ~ random(15) %}
+        {% set image = web_image(fileIcon(value.path).path).resize(null, 50) %}
+        <a href="#" class="easyadmin-thumbnail" data-featherlight="#{{ _lightbox_id }}"
+           data-featherlight-close-on-click="anywhere">
+            <img src="{{ image }}">
+        </a>
+        <div id="{{ _lightbox_id }}" class="easyadmin-lightbox">
+            {{ fileIcon(value.path, null, 500).html|raw }}
+        </div>
+
+    {% else %}
+        <span class="label">{{ 'label.null'|trans(domain = 'EasyAdminBundle') }}</span>
+    {% endif %}
+{% endif %}

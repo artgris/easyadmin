@@ -38,8 +38,8 @@
     "google/apiclient": "^2.0",
     "vich/uploader-bundle": "^1.5",
     "arkounay/block-bundle-i18n": "^1.0",
-    "arkounay/image-bundle": "^2.1",
     "artgris/filemanager-bundle": "^1.0",
+    "artgris/media-bundle": "dev-master",
     "gregwar/image-bundle": "^2.1"
   },
   "require-dev": {

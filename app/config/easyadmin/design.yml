@@ -25,7 +25,7 @@ easy_admin: # http://symfony.com/doc/current/bundles/EasyAdminBundle/book/config
         form_theme: ['horizontal', 'VichUploaderBundle:Form:fields.html.twig']
         assets:
             css:
-              - 'bundles/arkounayimage/arkounay_image_bundle.css'
+              - 'bundles/artgrismedia/css/media.css'
               - 'admin/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css'
               - "admin/css/admin.css"
             js:

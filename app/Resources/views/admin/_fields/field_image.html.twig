@@ -3,20 +3,18 @@
         <img src="{{ value.path }}">
     {% endif %}
 {% else %}
-    {% if value.path is defined and value.filepath %}
-        {% if value.filepath|split('.')|last == 'svg' %}
-            <img src="{{ value.path }}" alt="" width="75">
+    {% if value is defined %}
+        {% if value|split('.')|last == 'svg' %}
+            <img src="{{ value }}" alt="" width="75">
         {% else %}
-
             {% set _lightbox_id = 'easyadmin-lightbox-' ~ random(15) %}
-
-            {% set image = image(value.filepath).zoomCrop(550, 275) %}
+            {% set image = web_image(value).resize(null, 50) %}
             <a href="#" class="easyadmin-thumbnail" data-featherlight="#{{ _lightbox_id }}"
                data-featherlight-close-on-click="anywhere">
                 <img src="{{ image }}">
             </a>
             <div id="{{ _lightbox_id }}" class="easyadmin-lightbox">
-                <img src="{{ image }}">
+                <img src="{{ value }}">
             </div>
 
         {% endif %}

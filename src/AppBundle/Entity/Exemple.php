@@ -30,10 +30,15 @@ class Exemple
     protected $id;
 
     /**
-     * @var Image
-     * @ORM\Column(type="json_image", nullable=true)
+     * @ORM\Column(type="media", nullable=true)
      */
-    private $imageArkounay;
+    private $media;
+
+    /**
+     * @ORM\Column(type="media_collection", nullable=true)
+     */
+    private $mediaCollection;
+
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -168,21 +173,6 @@ class Exemple
         }
     }
 
-    /**
-     * @return mixed
-     */
-    public function getImageArkounay()
-    {
-        return $this->imageArkounay;
-    }
-
-    /**
-     * @param mixed $imageArkounay
-     */
-    public function setImageArkounay($imageArkounay)
-    {
-        $this->imageArkounay = $imageArkounay;
-    }
 
     /**
      * @return \DateTime
@@ -205,6 +195,37 @@ class Exemple
         return PropertyAccess::createPropertyAccessor()->getValue($this->translate(), $method);
     }
 
+    /**
+     * @return mixed
+     */
+    public function getMedia()
+    {
+        return $this->media;
+    }
+
+    /**
+     * @param mixed $media
+     */
+    public function setMedia($media)
+    {
+        $this->media = $media;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMediaCollection()
+    {
+        return $this->mediaCollection;
+    }
+
+    /**
+     * @param mixed $mediaCollection
+     */
+    public function setMediaCollection($mediaCollection)
+    {
+        $this->mediaCollection = $mediaCollection;
+    }
 
 
 }

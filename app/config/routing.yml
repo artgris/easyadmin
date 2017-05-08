@@ -15,10 +15,10 @@ JMSTranslationBundle_ui:
     type: annotation
     prefix: /admin/_trans
 
-arkounay_image:
-   resource: "@ArkounayImageBundle/Resources/config/routing.yml"
-
 artgris_bundle_file_manager:
     resource: "@ArtgrisFileManagerBundle/Controller"
     type:     annotation
-    prefix:   /admin/_manager
+    prefix: /admin/tools/manager
+
+artgris_media:
+    resource: "@ArtgrisMediaBundle/Resources/config/routing.yml"
