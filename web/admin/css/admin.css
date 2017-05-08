@@ -12,3 +12,8 @@ body {
 .a2lix_translations .nav {
     margin-bottom: 10px;
 }
+
+.easyadmin-thumbnail .fa {
+    font-size: 2.8em;
+    vertical-align: middle;
+}

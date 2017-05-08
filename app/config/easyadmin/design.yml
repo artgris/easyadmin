@@ -22,17 +22,18 @@ easy_admin: # http://symfony.com/doc/current/bundles/EasyAdminBundle/book/config
 #        brand_color: '#4B4B4B'
 #        brand_color: '#000000'
 #        form_theme: 'horizontal'
-        form_theme: ['horizontal', 'VichUploaderBundle:Form:fields.html.twig']
+        form_theme: ['horizontal', 'VichUploaderBundle:Form:fields.html.twig', 'admin/themes/jquery.collection.html.twig']
         assets:
             css:
-              - 'bundles/artgrismedia/css/media.css'
               - 'admin/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css'
               - "admin/css/admin.css"
+              - 'bundles/artgrismedia/css/media.css'
             js:
               - 'admin/plugins/tinymce/tinymce.min.js'
               - 'admin/plugins/tinymce/jquery.tinymce.min.js'
               - 'admin/plugins/moment-with-locales.js'
               - 'admin/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js'
               - 'admin/plugins/symfony-collection-2.0.4/jquery.collection.js'
+              - 'admin/plugins/jquery-ui-1.12.1/jquery-ui.js'
               - 'admin/js/admin.js'
             favicon: '/favicon.ico'

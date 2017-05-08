@@ -5,10 +5,12 @@
 {% else %}
     {% if value.path is defined and value.path is not null %}
         {% set _lightbox_id = 'easyadmin-lightbox-' ~ random(15) %}
-        {% set image = web_image(fileIcon(value.path).path).resize(null, 50) %}
+
+        {#{% set image = web_image(fileIcon(value.path).path).resize(null, 50) %}#}
+       {% set image = fileIcon(value.path, null, 50).html|raw %}
         <a href="#" class="easyadmin-thumbnail" data-featherlight="#{{ _lightbox_id }}"
            data-featherlight-close-on-click="anywhere">
-            <img src="{{ image }}">
+          {{ image|raw }}
         </a>
         <div id="{{ _lightbox_id }}" class="easyadmin-lightbox">
             {{ fileIcon(value.path, null, 500).html|raw }}

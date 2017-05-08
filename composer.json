@@ -40,7 +40,8 @@
     "arkounay/block-bundle-i18n": "^1.0",
     "artgris/filemanager-bundle": "^1.0",
     "artgris/media-bundle": "dev-master",
-    "gregwar/image-bundle": "^2.1"
+    "gregwar/image-bundle": "^2.1",
+    "ninsuo/symfony-collection": "^2.0"
   },
   "require-dev": {
     "sensio/generator-bundle": "^3.0",
