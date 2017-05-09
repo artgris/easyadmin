@@ -22,3 +22,6 @@ artgris_bundle_file_manager:
 
 artgris_media:
     resource: "@ArtgrisMediaBundle/Resources/config/routing.yml"
+
+block:
+   resource: "@ArkounayBlockI18nBundle/Resources/config/routing.yml"

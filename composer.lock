@@ -75,17 +75,17 @@
         },
         {
             "name": "arkounay/block-bundle-i18n",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "target-dir": "Arkounay/BlockI18nBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Arkounay/BlockI18nBundle.git",
-                "reference": "9de69f8e3444c9dd4706af790cf66801b5d8a183"
+                "reference": "33d82232e8d4ee7a8b38f7ccc4d56687c4236cc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Arkounay/BlockI18nBundle/zipball/9de69f8e3444c9dd4706af790cf66801b5d8a183",
-                "reference": "9de69f8e3444c9dd4706af790cf66801b5d8a183",
+                "url": "https://api.github.com/repos/Arkounay/BlockI18nBundle/zipball/33d82232e8d4ee7a8b38f7ccc4d56687c4236cc3",
+                "reference": "33d82232e8d4ee7a8b38f7ccc4d56687c4236cc3",
                 "shasum": ""
             },
             "require": {
@@ -116,7 +116,7 @@
                 "tinymce",
                 "wysiwig"
             ],
-            "time": "2017-05-04 14:10:40"
+            "time": "2017-05-09 07:23:45"
         },
         {
             "name": "artgris/filemanager-bundle",
