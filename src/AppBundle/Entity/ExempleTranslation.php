@@ -1,6 +1,5 @@
 <?php
 
-
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -11,9 +10,7 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
  */
 class ExempleTranslation
 {
-
     use ORMBehaviors\Translatable\Translation;
-
 
     /**
      * @var string
@@ -58,6 +55,4 @@ class ExempleTranslation
     {
         $this->content = $content;
     }
-
-
 }

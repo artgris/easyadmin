@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AppBundle\DataFixtures\ORM;
-
 
 use AppBundle\Entity\User;
 use Doctrine\Common\DataFixtures\FixtureInterface;
@@ -12,7 +10,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class LoadUserData implements FixtureInterface, ContainerAwareInterface
 {
-
     /**
      * @var ContainerInterface
      */
@@ -23,9 +20,8 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $this->container = $container;
     }
 
-
     /**
-     * Load data fixtures with the passed EntityManager
+     * Load data fixtures with the passed EntityManager.
      *
      * @param ObjectManager $manager
      */
@@ -52,6 +48,5 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $manager->persist($userSuperAdmin);
 
         $manager->flush();
-
     }
 }

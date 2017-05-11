@@ -1,13 +1,11 @@
 <?php
 
-
 namespace AppBundle\Controller\Admin;
 
 use JavierEguiluz\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 
 class UserController extends BaseAdminController
 {
-
     public function createNewUserEntity()
     {
         return $this->get('fos_user.user_manager')->createUser();
@@ -38,5 +36,4 @@ class UserController extends BaseAdminController
 //            'entity' => $this->request->query->get('entity'),
 //        ));
 //    }
-
 }

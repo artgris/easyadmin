@@ -1,6 +1,5 @@
 <?php
 
-
 namespace AppBundle\Controller\Admin;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -13,36 +12,37 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/admin/tools")
+ *
  * @author Arthur Gribet <a.gribet@gmail.com>
-*  @Security("has_role('ROLE_SUPER_ADMIN')")
+ *  @Security("has_role('ROLE_SUPER_ADMIN')")
  */
 class ToolsController extends Controller
 {
+    /**
+     * @Route("/clearcache", name="admin_tools_cc")
+     */
+    public function clearCacheAction()
+    {
+        $fs = new Filesystem();
+        $fs->remove($this->getParameter('kernel.cache_dir'));
+        $this->addFlash('success', 'message.cc');
 
-	/**
-	 * @Route("/clearcache", name="admin_tools_cc")
-	 */
-	public function clearCacheAction()
-	{
-		$fs = new Filesystem();
-		$fs->remove($this->getParameter('kernel.cache_dir'));
-		$this->addFlash('success', 'message.cc');
-		return $this->render(':admin/tools:clear_cache.html.twig');
-	}
+        return $this->render(':admin/tools:clear_cache.html.twig');
+    }
 
-	/**
-	 * @Route("/checkdatabase", name="admin_tools_checkdatabase")
-	 */
-	public function checkDatabaseAction()
-	{
-		$commande = [
-			'command' => 'd:s:v',
-		];
-		$output = $this->createCommande($commande);
-		$this->addFlash('success', $output);
-		return $this->render(':admin/tools:checkdatabase.html.twig');
+    /**
+     * @Route("/checkdatabase", name="admin_tools_checkdatabase")
+     */
+    public function checkDatabaseAction()
+    {
+        $commande = [
+            'command' => 'd:s:v',
+        ];
+        $output = $this->createCommande($commande);
+        $this->addFlash('success', $output);
 
-	}
+        return $this->render(':admin/tools:checkdatabase.html.twig');
+    }
 
     /**
      * @Route("/manager", name="admin_tools_manager")
@@ -50,21 +50,22 @@ class ToolsController extends Controller
     public function managerAction()
     {
         return $this->render(':admin/tools:filemanager.html.twig');
-
     }
 
     /**
-	 * @param $commande
-	 * @return mixed
-	 */
-	private function createCommande($commande)
-	{
-		$kernel = $this->get('kernel');
-		$application = new Application($kernel);
-		$application->setAutoExit(false);
-		$input = new ArrayInput($commande);
-		$output = new BufferedOutput();
-		$application->run($input, $output);
-		return $output->fetch();
-	}
+     * @param $commande
+     *
+     * @return mixed
+     */
+    private function createCommande($commande)
+    {
+        $kernel = $this->get('kernel');
+        $application = new Application($kernel);
+        $application->setAutoExit(false);
+        $input = new ArrayInput($commande);
+        $output = new BufferedOutput();
+        $application->run($input, $output);
+
+        return $output->fetch();
+    }
 }

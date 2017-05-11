@@ -1,14 +1,13 @@
 <?php
 
-
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\File;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Symfony\Component\Validator\Constraints as Assert;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\PropertyAccess\PropertyAccess;
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="ExempleRepository")
@@ -17,10 +16,7 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
  */
 class Exemple
 {
-
-
     use ORMBehaviors\Translatable\Translatable;
-
 
     /**
      * @ORM\Id
@@ -39,21 +35,23 @@ class Exemple
      */
     private $mediaCollection;
 
-
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     *
      * @var string
      */
     private $image;
 
     /**
      * @Vich\UploadableField(mapping="exemple_images", fileNameProperty="image")
+     *
      * @var File
      */
     private $imageFile;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     *
      * @var string
      */
     private $contract;
@@ -64,12 +62,14 @@ class Exemple
      *     mimeTypes = {"application/pdf", "application/x-pdf"},
      *     mimeTypesMessage = "Please upload a valid PDF"
      * )
+     *
      * @var File
      */
     private $contractFile;
 
     /**
      * @ORM\Column(type="datetime")
+     *
      * @var \DateTime
      */
     private $updatedAt;
@@ -81,16 +81,15 @@ class Exemple
      */
     private $date;
 
-
     /**
      * Exemple constructor.
+     *
      * @param \DateTime $updatedAt
      */
     public function __construct()
     {
         $this->updatedAt = new \DateTime();
     }
-
 
     public function setImageFile(File $image = null)
     {
@@ -163,7 +162,7 @@ class Exemple
     /**
      * @param File $contractFile
      */
-    public function setContractFile(File $contractFile  = null)
+    public function setContractFile(File $contractFile = null)
     {
         $this->contractFile = $contractFile;
 
@@ -172,7 +171,6 @@ class Exemple
             $this->updatedAt = new \DateTimeImmutable();
         }
     }
-
 
     /**
      * @return \DateTime
@@ -226,6 +224,4 @@ class Exemple
     {
         $this->mediaCollection = $mediaCollection;
     }
-
-
 }

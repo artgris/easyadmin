@@ -16,4 +16,5 @@
 /vendor/
 /web/bundles/
 .idea
+/.php_cs
 /src/AppBundle/Keyfile
