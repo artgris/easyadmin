@@ -4,13 +4,16 @@ easy_admin:
             label: "Entité exemple"
             class: AppBundle\Entity\Exemple
             list:
-#                actions:
-#                     - { name: 'show', icon: 'search' }
+                actions:
+                    - { name: 'admin_move_up', icon: 'arrow-up', label: '', type: 'route' }
+                    - { name: 'admin_move_down', icon: 'arrow-down', label: '', type: 'route' }
                 fields:
                     - { property: 'image', template: ':admin/_fields:field_image.html.twig', type: 'image', base_path: '%app.exemple.images%' }
                     - { property: 'media', template: ':admin/_fields:field_media.html.twig', type_options: {conf: 'default'} }
                     - { property: 'mediaCollection', template: ':admin/_fields:field_media_collection.html.twig', type_options: {conf: 'default'} }
                     - { property: 'contract', template: 'admin/_fields/field_contract.html.twig', base_path: '%app.exemple.contracts%' }
+                    - { property: 'position'}
+                sort: ['position', 'ASC']
             form:
                   fields:
                         - { property: 'imageFile', type: 'file' }

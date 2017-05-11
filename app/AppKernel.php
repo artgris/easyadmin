@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new Gregwar\ImageBundle\GregwarImageBundle(),
             new Artgris\Bundle\FileManagerBundle\ArtgrisFileManagerBundle(),
             new Artgris\Bundle\MediaBundle\ArtgrisMediaBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

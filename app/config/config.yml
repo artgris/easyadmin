@@ -128,6 +128,12 @@ artgris_file_manager:
         default:
             dir: "../web/uploads"
 
-
 gregwar_image:
     throw_exception: true
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            timestampable: true
+            sluggable: true
+            sortable: true

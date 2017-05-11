@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\PropertyAccess\PropertyAccess;
@@ -11,7 +12,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="ExempleRepository")
- * @ORM\Table(name="product")
+ * @ORM\Table(name="exemple")
  * @Vich\Uploadable
  */
 class Exemple
@@ -80,6 +81,13 @@ class Exemple
      * @Assert\NotNull()
      */
     private $date;
+
+    /**
+     * @var int
+     * @Gedmo\SortablePosition()
+     * @ORM\Column(name="position", type="integer")
+     */
+    private $position;
 
     /**
      * Exemple constructor.
@@ -223,5 +231,21 @@ class Exemple
     public function setMediaCollection($mediaCollection)
     {
         $this->mediaCollection = $mediaCollection;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param int $position
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
     }
 }
