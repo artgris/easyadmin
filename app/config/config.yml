@@ -137,3 +137,9 @@ stof_doctrine_extensions:
             timestampable: true
             sluggable: true
             sortable: true
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/migrations"
+    namespace: Migrations
+    table_name: migrations
+    name: migrations

@@ -31,6 +31,7 @@ class AppKernel extends Kernel
             new Artgris\Bundle\FileManagerBundle\ArtgrisFileManagerBundle(),
             new Artgris\Bundle\MediaBundle\ArtgrisMediaBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
