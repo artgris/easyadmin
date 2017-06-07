@@ -48,7 +48,8 @@
     "phpunit/phpunit": "^4.8 || ^5.0",
     "sensio/generator-bundle": "^3.0",
     "symfony/phpunit-bridge": "^3.0",
-    "doctrine/doctrine-fixtures-bundle": "^2.3"
+    "doctrine/doctrine-fixtures-bundle": "^2.3",
+    "deployer/deployer": "^5.0"
   },
   "scripts": {
     "symfony-scripts": [
