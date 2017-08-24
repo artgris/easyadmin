@@ -1,3 +1,4 @@
+/.web-server-pid
 /app/config/parameters.yml
 /build/
 /phpunit.xml
@@ -8,13 +9,14 @@
 !/var/logs
 /var/logs/*
 !var/logs/.gitkeep
-!var/data
 !/var/sessions
 /var/sessions/*
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+
+!var/data
 .idea
 /.php_cs
 /src/AppBundle/Keyfile

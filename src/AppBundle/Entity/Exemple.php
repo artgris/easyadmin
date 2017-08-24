@@ -58,17 +58,6 @@ class Exemple
     private $contract;
 
     /**
-     * @Vich\UploadableField(mapping="exemple_contracts", fileNameProperty="contract")
-     * @Assert\File(
-     *     mimeTypes = {"application/pdf", "application/x-pdf"},
-     *     mimeTypesMessage = "Please upload a valid PDF"
-     * )
-     *
-     * @var File
-     */
-    private $contractFile;
-
-    /**
      * @ORM\Column(type="datetime")
      *
      * @var \DateTime

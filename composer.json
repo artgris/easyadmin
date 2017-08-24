@@ -1,10 +1,10 @@
 {
-  "name": "root/easyadmin",
+  "name": "artgris/easyadmin",
   "license": "proprietary",
   "type": "project",
   "autoload": {
     "psr-4": {
-      "": "src/"
+      "AppBundle\\": "src/AppBundle"
     },
     "classmap": [
       "app/AppKernel.php",
@@ -14,20 +14,25 @@
   "autoload-dev": {
     "psr-4": {
       "Tests\\": "tests/"
-    }
+    },
+    "files": [
+      "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"
+    ]
   },
   "require": {
     "php": ">=5.5.9",
-    "symfony/symfony": "3.2.*",
-    "doctrine/orm": "^2.5",
     "doctrine/doctrine-bundle": "^1.6",
-    "doctrine/doctrine-cache-bundle": "^1.2",
-    "symfony/swiftmailer-bundle": "^2.3.10",
-    "symfony/monolog-bundle": "^3.0.2",
-    "symfony/polyfill-apcu": "^1.0",
-    "sensio/distribution-bundle": "^5.0",
-    "sensio/framework-extra-bundle": "^3.0.2",
+    "doctrine/orm": "^2.5",
     "incenteev/composer-parameter-handler": "^2.0",
+    "sensio/distribution-bundle": "^5.0.19",
+    "sensio/framework-extra-bundle": "^3.0.2",
+    "symfony/monolog-bundle": "^3.1.0",
+    "symfony/polyfill-apcu": "^1.0",
+    "symfony/swiftmailer-bundle": "^2.3.10",
+    "symfony/symfony": "3.3.*",
+    "twig/twig": "^1.0||^2.0",
+
+    "doctrine/doctrine-cache-bundle": "^1.2",
     "javiereguiluz/easyadmin-bundle": "^1.16",
     "friendsofsymfony/user-bundle": "^2.0",
     "jms/translation-bundle": "^1.0",
@@ -39,7 +44,7 @@
     "vich/uploader-bundle": "^1.5",
     "arkounay/block-bundle-i18n": "^1.0",
     "artgris/filemanager-bundle": "^1.0",
-    "artgris/media-bundle": "dev-master",
+    "artgris/media-bundle": "^1.0",
     "gregwar/image-bundle": "^2.1",
     "ninsuo/symfony-collection": "^2.0",
     "stof/doctrine-extensions-bundle": "^1.2",
@@ -50,7 +55,7 @@
     "sensio/generator-bundle": "^3.0",
     "symfony/phpunit-bridge": "^3.0",
     "doctrine/doctrine-fixtures-bundle": "^2.3",
-    "deployer/deployer": "^5.0"
+    "deployer/deployer": "^6.0"
   },
   "scripts": {
     "symfony-scripts": [

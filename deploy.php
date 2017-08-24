@@ -5,41 +5,47 @@ namespace Deployer;
 require 'vendor/deployer/deployer/recipe/symfony3.php';
 
 // Configuration
+set('repository', 'git@gitlab.com:artgris/easyadmin.git');
 
-set('repository', 'git@github.com:...');
+$host = 'IP';
+$deploy_path = '/var/www/symfony/';
+$user = "arthur";
+
+set('keep_releases', 3);
 set('git_tty', true); // [Optional] Allocate tty for git on first deployment
-add('shared_files', ['web/upload']);
-add('shared_dirs', []);
-add('writable_dirs', []);
 set('allow_anonymous_stats', false);
 
-host('host')
-    ->user('user')
-    ->stage('production')
-    ->set('branch', 'feat/deployer')
-    ->set('deploy_path', '/var/www/...');
+add('shared_dirs', ['web/uploads', 'app/Resources/translations']);
+add('writable_dirs', ['web/uploads', 'app/Resources/translations']);
 
-// Tasks
+host('dev')
+    ->hostname($host)
+    ->stage('dev')
+    ->set('env', 'dev')
+    ->user($user)
+    ->set('clear_paths', ['web/config.php'])
+    ->set('deploy_path',$deploy_path)
+    ->set('composer_options', '{{composer_action}} --verbose --prefer-dist --no-progress --no-interaction --optimize-autoloader');
 
-task('pwd', function () {
-    $result = run('pwd');
-    writeln("Current dir: $result");
-});
+host('test')
+    ->hostname($host)
+    ->stage('test')
+    ->user($user)
+    ->set('deploy_path',$deploy_path);
 
+host('prod')
+    ->hostname($host)
+    ->stage('prod')
+    ->user($user)
+    ->set('deploy_path',$deploy_path);
 
-desc('Restart PHP-FPM service');
-task('php-fpm:restart', function () {
-    // The user must have rights for restart service
-    // /etc/sudoers: username ALL=NOPASSWD:/bin/systemctl restart php-fpm.service
-    //etc/sudoers: arthur ALL=NOPASSWD:/bin/service apache2 restart
-//    run('sudo systemctl restart php-fpm.service');
-    run('sudo service apache2 restart');
-});
-after('deploy:symlink', 'php-fpm:restart');
-
-// [Optional] if deploy fails automatically unlock.
+// if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
 
 // Migrate database before symlink new release.
-
 before('deploy:symlink', 'database:migrate');
+
+task('fixtures:load', function () use ($deploy_path) {
+    run('{{env_vars}} {{bin/php}} {{bin/console}} doctrine:fixtures:load -n');
+    write('Fixtures done!');
+})->desc('Run fixtures');

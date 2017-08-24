@@ -1,6 +1,6 @@
 app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+    resource: '@AppBundle/Controller/'
+    type: annotation
 
 easy_admin_bundle:
     resource: "@AppBundle/Controller/Admin/AdminController.php"
