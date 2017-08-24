@@ -15,7 +15,6 @@ class MainController extends Controller
      */
     public function indexAction(EntityManagerInterface $em)
     {
-        dump($em->getRepository('AppBundle:User')->findAll());
         return $this->render('main/index.html.twig');
     }
 }
