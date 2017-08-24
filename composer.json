@@ -33,22 +33,21 @@
     "twig/twig": "^1.0||^2.0",
 
     "javiereguiluz/easyadmin-bundle": "^1.16",
-    "doctrine/doctrine-cache-bundle": "^1.2",
     "friendsofsymfony/user-bundle": "^2.0",
     "jms/translation-bundle": "^1.0",
-    "jms/di-extra-bundle": "dev-master",
-    "jms/i18n-routing-bundle": "dev-master",
+    "jms/di-extra-bundle": "^1.0",
+    "jms/i18n-routing-bundle": "^2.0",
     "a2lix/translation-form-bundle": "2.*",
     "knplabs/doctrine-behaviors": "~1.1",
-    "google/apiclient": "^2.0",
-    "vich/uploader-bundle": "^1.5",
     "arkounay/block-bundle-i18n": "^1.0",
     "artgris/filemanager-bundle": "^1.0",
     "artgris/media-bundle": "^1.0",
-    "gregwar/image-bundle": "^2.1",
     "ninsuo/symfony-collection": "^2.0",
     "stof/doctrine-extensions-bundle": "^1.2",
-    "doctrine/doctrine-migrations-bundle": "^1.0"
+    "doctrine/doctrine-migrations-bundle": "^1.0",
+    "google/apiclient": "^2.0",
+    "vich/uploader-bundle": "^1.5",
+    "gregwar/image-bundle": "^2.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.8 || ^5.0",

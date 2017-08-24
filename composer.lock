@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b7cc786b091249fb65c1f22912b978ac",
-    "content-hash": "51cedc0ee7013707e751e61270e239b5",
+    "hash": "1a32da8b100fef901574cd36ab47ad7c",
+    "content-hash": "2eabfe978f70eca1bb1cb03e409675e4",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -2236,16 +2236,16 @@
         },
         {
             "name": "jms/di-extra-bundle",
-            "version": "dev-master",
+            "version": "1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSDiExtraBundle.git",
-                "reference": "4adca6ba4feec25869c16a8af2ade9f20fc62f91"
+                "reference": "bd261ce117608be02533b901b07c5366997c5846"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSDiExtraBundle/zipball/4adca6ba4feec25869c16a8af2ade9f20fc62f91",
-                "reference": "4adca6ba4feec25869c16a8af2ade9f20fc62f91",
+                "url": "https://api.github.com/repos/schmittjoh/JMSDiExtraBundle/zipball/bd261ce117608be02533b901b07c5366997c5846",
+                "reference": "bd261ce117608be02533b901b07c5366997c5846",
                 "shasum": ""
             },
             "require": {
@@ -2264,13 +2264,12 @@
                 "doctrine/orm": "~2.3",
                 "jms/security-extra-bundle": "~1.0",
                 "phpcollection/phpcollection": ">=0.2,<0.3-dev",
-                "phpunit/phpunit": "^5.0.0",
                 "sensio/framework-extra-bundle": "~2.0|~3.0",
                 "symfony/browser-kit": "~2.3|~3.0",
                 "symfony/class-loader": "~2.3|~3.0",
                 "symfony/expression-language": "~2.6|~3.0",
                 "symfony/form": "~2.3|~3.0",
-                "symfony/phpunit-bridge": "~3.2",
+                "symfony/phpunit-bridge": "~2.7",
                 "symfony/security-bundle": "~2.3",
                 "symfony/twig-bundle": "~2.3|~3.0",
                 "symfony/validator": "~2.3|~3.0",
@@ -2303,11 +2302,11 @@
                 "annotations",
                 "dependency injection"
             ],
-            "time": "2017-07-11 17:27:23"
+            "time": "2017-05-31 11:52:22"
         },
         {
             "name": "jms/i18n-routing-bundle",
-            "version": "dev-master",
+            "version": "2.0.1",
             "target-dir": "JMS/I18nRoutingBundle",
             "source": {
                 "type": "git",
@@ -6120,10 +6119,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "jms/di-extra-bundle": 20,
-        "jms/i18n-routing-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
