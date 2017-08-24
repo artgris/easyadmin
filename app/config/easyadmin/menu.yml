@@ -6,12 +6,13 @@ easy_admin:
           - label: 'menu.settings'
             icon: 'wrench'
             children:
-                - { label: 'menu.cc', route: 'admin_tools_cc', icon: 'eraser' }
-                - { label: 'menu.dsv', route: 'admin_tools_checkdatabase', icon: 'database' }
-                - { label: 'menu.translate', route: 'jms_translation_index', icon: 'flag' }
+                - { label: 'menu.cc', route: 'admin_tools_cc', icon: 'eraser', role: 'ROLE_SUPER_ADMIN' }
+                - { label: 'menu.dsv', route: 'admin_tools_checkdatabase', icon: 'database', role: 'ROLE_SUPER_ADMIN' }
+                - { label: 'menu.translate', route: 'jms_translation_index', icon: 'flag', role: 'ROLE_SUPER_ADMIN' }
                 - { label: 'menu.manager', route: 'admin_tools_manager', icon: 'upload' }
           - label: 'Blocs'
             icon: 'square-o'
+            role: 'ROLE_SUPER_ADMIN'
             children:
                 - { label: 'menu.bloc.text', entity: 'PageBlock' }
           - { label: 'Exemple', entity: 'Exemple', icon: 'terminal' }

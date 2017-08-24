@@ -4,7 +4,7 @@ namespace Deployer;
 
 $host = 'host_ip';
 $deploy_path = '/var/www/symfony';
-$user = 'ssh_username';
+$user = 'arthur';
 
 host('dev')
     ->hostname($host)

@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * @Route("/admin/tools")
  *
  * @author Arthur Gribet <a.gribet@gmail.com>
- *  @Security("has_role('ROLE_SUPER_ADMIN')")
+ *  @Security("has_role('ROLE_ADMIN')")
  */
 class ToolsController extends Controller
 {
