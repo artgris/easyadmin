@@ -167,13 +167,15 @@
         {% endblock wrapper %}
     </div>
 
-    {% block body_javascript %}
-        {% include '@ArtgrisMedia/assets/include_js.html.twig' %}
-    {% endblock body_javascript %}
 
     {% for js_asset in easyadmin_config('design.assets.js') %}
         <script src="{{ asset(js_asset) }}"></script>
     {% endfor %}
+
+    {% block body_javascript %}
+        {% include '@ArtgrisMedia/assets/include_js.html.twig' %}
+    {% endblock body_javascript %}
+
     </body>
 {% endblock body %}
 </html>

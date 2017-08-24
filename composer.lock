@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ff75c389f787fadb5791b34b6e01b4ef",
-    "content-hash": "f530bb634d57f42c93f7ef7274cd9caf",
+    "hash": "b7cc786b091249fb65c1f22912b978ac",
+    "content-hash": "51cedc0ee7013707e751e61270e239b5",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -171,16 +171,16 @@
         },
         {
             "name": "artgris/media-bundle",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artgris/MediaBundle.git",
-                "reference": "b625dc6ea57ea3be5dd9b28217af9967976ac4d5"
+                "reference": "0dbd52557935be05d0a0f26889122fc3bb0df3d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artgris/MediaBundle/zipball/b625dc6ea57ea3be5dd9b28217af9967976ac4d5",
-                "reference": "b625dc6ea57ea3be5dd9b28217af9967976ac4d5",
+                "url": "https://api.github.com/repos/artgris/MediaBundle/zipball/0dbd52557935be05d0a0f26889122fc3bb0df3d6",
+                "reference": "0dbd52557935be05d0a0f26889122fc3bb0df3d6",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
                 "media",
                 "symfony"
             ],
-            "time": "2017-08-22 09:32:36"
+            "time": "2017-08-24 12:50:44"
         },
         {
             "name": "behat/transliterator",
