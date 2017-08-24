@@ -36,10 +36,8 @@ class PopulateAdminUsersCommand extends ContainerAwareCommand
             }
             $this->manager->flush();
             $output->writeln('Creation of admin users was successfully completed');
-
         } catch (\Exception $e) {
-            $output->writeln('The error occurred during execution : ' . $e->getMessage());
+            $output->writeln('The error occurred during execution : '.$e->getMessage());
         }
-
     }
 }

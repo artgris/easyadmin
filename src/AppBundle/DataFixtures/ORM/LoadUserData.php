@@ -11,12 +11,10 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 
 class LoadUserData implements FixtureInterface, ContainerAwareInterface
 {
-
     const USERS = [
         'admin' => ['ROLE_ADMIN'],
-        'superadmin' => ['ROLE_SUPER_ADMIN']
+        'superadmin' => ['ROLE_SUPER_ADMIN'],
     ];
-
 
     private $encoder;
 
@@ -38,13 +36,13 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $manager->flush();
     }
 
-    static public function generateUser(ObjectManager $manager, UserPasswordEncoder $encoder, $userName, array $userRole)
+    public static function generateUser(ObjectManager $manager, UserPasswordEncoder $encoder, $userName, array $userRole)
     {
         $user = new User();
         $user->setUsername($userName);
         $password = $encoder->encodePassword($user, $userName);
         $user->setPassword($password);
-        $user->setEmail($userName . '@admin.com');
+        $user->setEmail($userName.'@admin.com');
         $user->setEnabled(true);
         $user->setRoles($userRole);
         $manager->persist($user);

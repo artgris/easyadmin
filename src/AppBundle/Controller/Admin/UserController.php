@@ -21,7 +21,7 @@ class UserController extends BaseAdminController
         $this->get('fos_user.user_manager')->updateUser($user, false);
     }
 
-//
+    //
 //    public function duplicateAction()
 //    {
 //        $id = $this->request->query->get('id');

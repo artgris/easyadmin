@@ -29,4 +29,3 @@ task('app:users:populate', function () {
     run('{{bin/php}} {{bin/console}} app:users:populate');
     write('Creation of admin users was successfully completed');
 })->desc('Create admin users');
-
