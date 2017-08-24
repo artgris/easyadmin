@@ -32,8 +32,8 @@
     "symfony/symfony": "3.3.*",
     "twig/twig": "^1.0||^2.0",
 
-    "doctrine/doctrine-cache-bundle": "^1.2",
     "javiereguiluz/easyadmin-bundle": "^1.16",
+    "doctrine/doctrine-cache-bundle": "^1.2",
     "friendsofsymfony/user-bundle": "^2.0",
     "jms/translation-bundle": "^1.0",
     "jms/di-extra-bundle": "dev-master",

@@ -21,7 +21,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle(),
             new JMS\TranslationBundle\JMSTranslationBundle(),
-            new JMS\DiExtraBundle\JMSDiExtraBundle($this), // Fuck you
+            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
             new A2lix\TranslationFormBundle\A2lixTranslationFormBundle(),

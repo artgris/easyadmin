@@ -1,4 +1,8 @@
-User: 'Utilisateur'
+Enabled: Actif
+'Last login': 'Dernière connexion'
+'Plain password': 'Mot de passe'
+Roles: Rôles
+User: "Utilisateur\n\n"
 
 button:
     cc:
@@ -11,15 +15,17 @@ loginpage:
     message: 'Interface d''administration'
 
 menu:
+    bloc:
+        text: Textes
+
     cc: 'Vider le cache'
     dashboard: 'Tableau de bord'
     dsv: 'Vérifier la BDD'
+    manager: 'File Manager'
     settings: Paramètres
     translate: Traductions
     user: Utilisateurs
-    website: Voir le site
-    bloc.text: Textes
-    manager: 'File Manager'
+    website: 'Voir le site'
 
 message:
     cc: 'Cache vidé avec succès'
@@ -33,8 +39,3 @@ success:
 
     update:
         message: 'Élément mis à jour avec succés'
-
-Enabled: 'Actif'
-Last login: 'Dernière connexion'
-Roles : Rôles
-Plain password: Mot de passe

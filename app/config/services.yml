@@ -26,11 +26,7 @@ services:
     # and have a tag that allows actions to type-hint services
     AppBundle\Controller\:
         resource: '../../src/AppBundle/Controller'
-        public: false
+        public: true
         tags: ['controller.service_arguments']
-
-
-    # add more services, or override services that need manual wiring
-    # AppBundle\Service\ExampleService:
-    #     arguments:
-    #         $someArgument: 'some_value'
+        calls: # JMSDiExtraBundle => https://github.com/symfony/symfony/issues/23200
+            - [setContainer, ["@service_container"]]
