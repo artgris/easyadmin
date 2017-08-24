@@ -46,6 +46,12 @@ after('deploy:failed', 'deploy:unlock');
 before('deploy:symlink', 'database:migrate');
 
 task('fixtures:load', function () use ($deploy_path) {
-    run('{{env_vars}} {{bin/php}} {{bin/console}} doctrine:fixtures:load -n');
+    run('{{bin/php}} {{bin/console}} doctrine:fixtures:load -n');
     write('Fixtures done!');
 })->desc('Run fixtures');
+
+task('app:users:populate', function () use ($deploy_path) {
+    run('{{bin/php}} {{bin/console}} app:users:populate');
+    write('Creation of admin users was successfully completed');
+})->desc('Create admin users');
+

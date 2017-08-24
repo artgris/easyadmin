@@ -7,17 +7,22 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 
 class LoadUserData implements FixtureInterface, ContainerAwareInterface
 {
-    /**
-     * @var ContainerInterface
-     */
-    private $container;
+
+    const USERS = [
+        'admin' => ['ROLE_ADMIN'],
+        'superadmin' => ['ROLE_SUPER_ADMIN']
+    ];
+
+
+    private $encoder;
 
     public function setContainer(ContainerInterface $container = null)
     {
-        $this->container = $container;
+        $this->encoder = $container->get('security.password_encoder');
     }
 
     /**
@@ -27,26 +32,21 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
      */
     public function load(ObjectManager $manager)
     {
-        $encoder = $this->container->get('security.password_encoder');
-
-        $userAdmin = new User();
-        $userAdmin->setUsername('admin');
-        $password = $encoder->encodePassword($userAdmin, 'admin');
-        $userAdmin->setPassword($password);
-        $userAdmin->setEmail('admin@admin.com');
-        $userAdmin->setEnabled(true);
-        $userAdmin->setRoles(['ROLE_ADMIN']);
-        $manager->persist($userAdmin);
-
-        $userSuperAdmin = new User();
-        $userSuperAdmin->setUsername('superadmin');
-        $password = $encoder->encodePassword($userSuperAdmin, 'superadmin');
-        $userSuperAdmin->setPassword($password);
-        $userSuperAdmin->setEmail('superadmin@admin.com');
-        $userSuperAdmin->setEnabled(true);
-        $userSuperAdmin->setRoles(['ROLE_SUPER_ADMIN']);
-        $manager->persist($userSuperAdmin);
-
+        foreach ($this::USERS as $userName => $userRole) {
+            $this->generateUser($manager, $this->encoder, $userName, $userRole);
+        }
         $manager->flush();
+    }
+
+    static public function generateUser(ObjectManager $manager, UserPasswordEncoder $encoder, $userName, array $userRole)
+    {
+        $user = new User();
+        $user->setUsername($userName);
+        $password = $encoder->encodePassword($user, $userName);
+        $user->setPassword($password);
+        $user->setEmail($userName . '@admin.com');
+        $user->setEnabled(true);
+        $user->setRoles($userRole);
+        $manager->persist($user);
     }
 }
