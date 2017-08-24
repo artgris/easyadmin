@@ -3,7 +3,7 @@
 namespace Deployer;
 
 require 'vendor/deployer/deployer/recipe/symfony3.php';
-require 'hosts.dist.php';
+require 'hosts.php';
 
 // Configuration
 set('repository', 'git@github.com:artgris/easyadmin.git');
