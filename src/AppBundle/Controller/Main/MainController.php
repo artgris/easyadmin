@@ -13,7 +13,7 @@ class MainController extends Controller
     /**
      * @Route("/", name="main_homepage")
      */
-    public function indexAction(EntityManagerInterface $em)
+    public function indexAction()
     {
         return $this->render('main/index.html.twig');
     }
