@@ -20,10 +20,12 @@ Symfony starter project using:
 - [gregwar/image-bundle](https://github.com/Gregwar/ImageBundle)
 - [google/apiclient](https://github.com/google/google-api-php-client)
 
-
-
 Documentation
 -------------
+
+#### The Book
+
+  * [Chapter 0 - Installation](doc/book/0-installation.md)
 
 #### Tutorials
 

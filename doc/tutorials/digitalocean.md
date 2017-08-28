@@ -3,6 +3,7 @@ How To Deploy a Symfony Application on DigitalOcean with Deployer
 
 sudo apt-get install unzip php-zip php-mysql php-curl php-gd php-mbstring php-mcrypt php-xml
 sudo phpenmod pdo_mysql
+
 adduser arthur
 gpasswd -a arthur sudo
 vi /etc/ssh/sshd_config => PasswordAuthentication yes
@@ -36,6 +37,11 @@ sudo vi /etc/apache2/sites-available/symfony.conf
         
         ErrorLog ${APACHE_LOG_DIR}/symfony_error.log
         CustomLog ${APACHE_LOG_DIR}/symfony_access.log combined
+        
+        SetEnv DATABASE_NAME db_symfony
+        SetEnv DATABASE_USER db_symfony_user
+        SetEnv DATABASE_PASSWORD erfe51f65e        
+        
     </VirtualHost>
  
 a2dissite 000-default.conf
