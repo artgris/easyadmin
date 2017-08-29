@@ -18,7 +18,7 @@ add('writable_dirs', ['web/uploads', 'app/Resources/translations']);
 after('deploy:failed', 'deploy:unlock');
 
 // Migrate database before symlink new release.
-before('deploy:symlink', 'database:migrate');
+//before('deploy:symlink', 'database:migrate');
 
 task('fixtures:load', function () {
     run('{{bin/php}} {{bin/console}} doctrine:fixtures:load -n');
