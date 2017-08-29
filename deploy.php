@@ -17,6 +17,20 @@ add('writable_dirs', ['web/uploads', 'app/Resources/translations']);
 // if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
 
+before('deploy:vendors', 'deploy:build-parameters');
+
+
+// on first deployment
+task('deploy:vendors', function () {
+    if (!commandExist('unzip')) {
+        writeln('<comment>To speed up composer installation setup "unzip" command with PHP zip extension https://goo.gl/sxzFcD</comment>');
+    }
+    run('cd {{release_path}} && {{bin/composer}} {{composer_options}}', ['tty' => true]);
+});
+
+
+
+
 // Migrate database before symlink new release.
 //before('deploy:symlink', 'database:migrate');
 
