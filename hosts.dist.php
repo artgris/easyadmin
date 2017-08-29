@@ -2,7 +2,7 @@
 
 namespace Deployer;
 
-$host = '138.197.84.151';
+$host = 'host_ip';
 $deploy_path = '/var/www/symfony';
 $user = 'arthur';
 
