@@ -2,7 +2,7 @@
 
 namespace Deployer;
 
-$host = 'host_ip';
+$host = '138.197.84.151';
 $deploy_path = '/var/www/symfony';
 $user = 'arthur';
 
@@ -13,7 +13,7 @@ host('dev')
     ->user($user)
     ->set('clear_paths', ['web/config.php'])
     ->set('deploy_path', $deploy_path)
-    ->set('composer_options', '{{composer_action}} --verbose --prefer-dist --no-progress --no-interaction --optimize-autoloader');
+    ->set('composer_options', '{{composer_action}} --verbose --prefer-dist --no-progress --optimize-autoloader');
 
 host('test')
     ->hostname($host)
@@ -27,4 +27,5 @@ host('prod')
     ->stage('prod')
     ->set('symfony_env', 'prod')
     ->user($user)
-    ->set('deploy_path', $deploy_path);
+    ->set('deploy_path', $deploy_path)
+    ->set('composer_options', '{{composer_action}} --verbose --prefer-dist --no-progress --no-dev --optimize-autoloader'); // on first deployment

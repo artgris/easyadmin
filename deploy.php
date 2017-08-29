@@ -28,11 +28,8 @@ task('deploy:vendors', function () {
     run('cd {{release_path}} && {{bin/composer}} {{composer_options}}', ['tty' => true]);
 });
 
-
-
-
 // Migrate database before symlink new release.
-//before('deploy:symlink', 'database:migrate');
+before('deploy:symlink', 'database:migrate');
 
 task('fixtures:load', function () {
     run('{{bin/php}} {{bin/console}} doctrine:fixtures:load -n');
