@@ -56,7 +56,7 @@ Start a ssh connection :
 
     `$ ssh arthur@ip` 
     
-- replace `PasswordAuthentication yes` with `PasswordAuthentication no`  ... and `$ sudo service sshd restart`
+- replace `PasswordAuthentication yes` with `PasswordAuthentication no` and `$ sudo service sshd restart`
 
 #### Configure Mysql
 
