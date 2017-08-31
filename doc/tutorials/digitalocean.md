@@ -46,6 +46,7 @@ Start a ssh connection :
 - Restart sshd    
             
     `$ sudo service sshd restart`
+    
     `$ exit`
 
 - Copy the public key (from your machine)
