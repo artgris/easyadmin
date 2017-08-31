@@ -39,8 +39,7 @@ Start a ssh connection :
    
 - Active Password Authentification :
 
-
-    $ sudo vi /etc/ssh/sshd_config
+`$ sudo vi /etc/ssh/sshd_config`
     
    And replace `PasswordAuthentication no` with `PasswordAuthentication yes`
     
