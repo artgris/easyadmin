@@ -20,7 +20,7 @@ after('deploy:failed', 'deploy:unlock');
 before('deploy:vendors', 'deploy:build-parameters');
 
 
-// on first deployment
+// on first deployment | https://github.com/deployphp/deployer/issues/126, add tty
 task('deploy:vendors', function () {
     if (!commandExist('unzip')) {
         writeln('<comment>To speed up composer installation setup "unzip" command with PHP zip extension https://goo.gl/sxzFcD</comment>');
@@ -29,13 +29,20 @@ task('deploy:vendors', function () {
 });
 
 // Migrate database before symlink new release.
-before('deploy:symlink', 'database:migrate');
+//before('deploy:symlink', 'database:migrate');
 
+// Doctrine commands
 task('fixtures:load', function () {
     run('{{bin/php}} {{bin/console}} doctrine:fixtures:load -n');
     write('Fixtures done!');
 })->desc('Run fixtures');
 
+task('d:s:u', function () {
+    run('{{bin/php}} {{bin/console}} d:s:u --force');
+    write('d:s:u was successfully completed');
+})->desc('d:s:u');
+
+// populate admin data
 task('app:users:populate', function () {
     run('{{bin/php}} {{bin/console}} app:users:populate');
     write('Creation of admin users was successfully completed');

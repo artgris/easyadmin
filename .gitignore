@@ -21,3 +21,4 @@
 /.php_cs
 /src/AppBundle/Keyfile
 hosts.php
+**/Entity/*~
