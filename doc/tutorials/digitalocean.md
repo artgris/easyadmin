@@ -2,7 +2,7 @@ How To Deploy a Symfony Application on DigitalOcean with Deployer
 =================================================================
 
 
-###Create LAMP droplet
+### Create LAMP droplet
 
 First, create a [LAMP on 16.04 Droplet](https://www.digitalocean.com/products/one-click-apps/lamp/)
 and add your SSH key `cat ~/.ssh/id_rsa.pub`
