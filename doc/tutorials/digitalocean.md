@@ -41,23 +41,20 @@ Start a ssh connection :
 
     `$ sudo vi /etc/ssh/sshd_config`
     
-   And replace `PasswordAuthentication no` with `PasswordAuthentication yes`
+    And replace `PasswordAuthentication no` with `PasswordAuthentication yes`
     
 - Restart sshd    
-    
-        
-    $ sudo service sshd restart
-    $ exit
+            
+    `$ sudo service sshd restart`
+    `$ exit`
 
 - Copy the public key (from your machine)
 
-
-    $ ssh-copy-id arthur@ip
+    `$ ssh-copy-id arthur@ip`
     
 - Try to logging
 
-
-    $ ssh arthur@ip   
+    `$ ssh arthur@ip` 
     
   
 #### Configure Mysql
@@ -66,7 +63,7 @@ Start a ssh connection :
     $ cat /root/.digitalocean_password
     $ sudo mysql_secure_installation
     
-    Answers :
+Answers :
     
     - Would you like to setup VALIDATE PASSWORD plugin?: y
     - Password validation policy: 3
@@ -96,7 +93,7 @@ Create a new database and user
 
     $ sudo vi /etc/apache2/sites-available/symfony.conf
 
-    The minimum configuration : 
+The minimum configuration : 
     
     <VirtualHost *:80>
         #ServerName domain.tld
