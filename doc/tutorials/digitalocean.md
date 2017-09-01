@@ -106,23 +106,22 @@ $ sudo chown arthur:arthur /var/www/symfony
 $ sudo vi /etc/apache2/sites-available/symfony.conf
 ``` 
 The minimum configuration : 
-    
-    <VirtualHost *:80>
-        #ServerName domain.tld
-        #ServerAlias www.domain.tld
-    
-        DocumentRoot /var/www/symfony/current/web
-        <Directory /var/www/symfony/current/web>
-            AllowOverride All
-            Order Allow,Deny
-            Allow from All
-        </Directory>
-        
-        ErrorLog ${APACHE_LOG_DIR}/symfony_error.log
-        CustomLog ${APACHE_LOG_DIR}/symfony_access.log combined        
+```apache    
+<VirtualHost *:80>
+    #ServerName domain.tld
+    #ServerAlias www.domain.tld
 
-    </VirtualHost>
-          
+    DocumentRoot /var/www/symfony/current/web
+    <Directory /var/www/symfony/current/web>
+        AllowOverride All
+        Order Allow,Deny
+        Allow from All
+    </Directory>
+    
+    ErrorLog ${APACHE_LOG_DIR}/symfony_error.log
+    CustomLog ${APACHE_LOG_DIR}/symfony_access.log combined     
+</VirtualHost>
+```          
 Enable/disable apache2 site 
 ```bash          
 $ sudo a2dissite 000-default.conf
@@ -141,12 +140,12 @@ $ sudo service apache2 restart
 $ sudo vi /etc/apache2/conf-available/security.conf 
 ```    
     
-Edit the following lines and save :
-        
-    ServerTokens Prod
-    ServerSignature Off
-    TraceEnable Off
-    
+Edit the following lines and save :```
+```apache       
+ServerTokens Prod
+ServerSignature Off
+TraceEnable Off
+```   
 Restart Apache
 
 ```bash 
