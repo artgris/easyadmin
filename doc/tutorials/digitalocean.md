@@ -86,7 +86,7 @@ Answers :
 Generate strong passwords (useful in next step)
 
 ```bash
-$ apg -a 1 -n 10 -x 10 -m 10
+$ apg -a 1 -m 10 -x 10 
 ```
 Create a new database and user
 
@@ -183,6 +183,8 @@ cp hosts.php.dist hosts.php
 #### Generate a symfony token (useful for the next step)
 
 ```bash
+$ apg -a 1 -M nl -m 40 -x 40
+or
 $ openssl rand -hex 20 
 or 
 $ php -r "echo hash('sha1', uniqid(mt_rand(), true));"
