@@ -26,7 +26,7 @@ $ echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
 
 ```bash
 $ sudo apt-get update
-$ sudo apt-get install php-zip php-mysql php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc unzip
+$ sudo apt-get install php-intl php-zip php-mysql php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc unzip
 ```   
 #### Enable pdo_mysql
 
@@ -83,6 +83,11 @@ Answers :
     - Remove test database and access to it?: y
     - Reload privilege tables now?: y
  
+Generate strong passwords (useful in next step)
+
+```bash
+$ apg -a 1 -n 10 -x 10 -m 10
+```
 Create a new database and user
 
 ```bash
@@ -152,3 +157,46 @@ Restart Apache
 ```bash 
 sudo service apache2 restart
 ``` 
+
+### Set up deployer 
+
+#### Edit deploy.php
+
+```php
+    set('repository', 'git@github.com:...');
+```
+
+#### Copy hosts.php.dist to hosts.php
+
+```bash
+cp hosts.php.dist hosts.php
+```
+
+#### Edit the following variables
+
+```php
+    $host = 'host_ip';
+    $deploy_path = '/var/www/symfony';
+    $user = 'arthur';
+```
+
+#### Generate a symfony token (useful for the next step)
+
+```bash
+$ openssl rand -hex 20 
+or 
+$ php -r "echo hash('sha1', uniqid(mt_rand(), true));"
+or
+$ php -r "echo  bin2hex(random_bytes(23));"
+or
+$ php -r "echo hash('sha1', openssl_random_pseudo_bytes(23));" #openssl required
+```
+
+#### deploy commands
+
+```bash
+    $ dep deploy dev
+    $ dep symfony_requirements dev # Checking Requirements
+    $ dep d:s:u dev
+    $ dep app:users:populate dev
+```

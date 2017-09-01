@@ -36,6 +36,7 @@ task('fixtures:load', function () {
     write('Fixtures done!');
 })->desc('Run fixtures');
 
+// Update database Schema
 task('d:s:u', function () {
     run('{{bin/php}} {{bin/console}} d:s:u --force');
     write('d:s:u was successfully completed');
@@ -46,3 +47,18 @@ task('app:users:populate', function () {
     run('{{bin/php}} {{bin/console}} app:users:populate');
     write('Creation of admin users was successfully completed');
 })->desc('Create admin users');
+
+// List available commands
+task('list', function () {
+    run('{{bin/php}} {{bin/console}} list', ['tty' => true]);
+});
+
+// Checking Requirements
+task('symfony_requirements', function () {
+    run('{{bin/php}} {{bin/symfony_requirements}}', ['tty' => true]);
+});
+
+// Symfony console bin
+set('bin/symfony_requirements', function () {
+    return sprintf('{{release_path}}/%s/symfony_requirements', trim(get('bin_dir'), '/'));
+});
