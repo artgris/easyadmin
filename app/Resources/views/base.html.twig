@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-    {% include '@ArkounayBlockI18n/assets/include_css.html.twig' %}
+    {% block stylesheets %}
+        {% include '@ArkounayBlockI18n/assets/include_css.html.twig' %}
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
-<a href="{{ path('main_homepage', {"_locale": "fr"}) }}"
-   class="{{ app.request.locale == 'fr' ? 'active' : 'disabled' }}">FR</a>
-<a href="{{ path('main_homepage', {"_locale": "en"}) }}"
-   class="{{ app.request.locale == 'en' ? 'active' : 'disabled' }}">EN</a>
 {% block body %}{% endblock %}
 {% block javascripts %}
-    {# Import jQuery and TinyMCE: #}
     {% if has_inline_edit_permissions() %}
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.4.3/tinymce.min.js"></script>
     {% endif %}
-
-    {# Then the default bundle's JavaScript: #}
     {% include '@ArkounayBlockI18n/assets/include_js.html.twig' %}
-
 {% endblock %}
 </body>
 </html>

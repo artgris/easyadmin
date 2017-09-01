@@ -13,10 +13,15 @@ Chapter 0. Installation
 cp hosts.php.dist hosts.php
 ```
 
-$host = 'host_ip';
-$deploy_path = '/var/www/symfony';
-$user = 'arthur';
+    #hosts.php:
+    
+    $host = 'host_ip';
+    $deploy_path = '/var/www/symfony';
+    $user = 'arthur';
 
+
+    #deploy.php
+    set('repository', 'git@github.com:artgris/easyadmin.git');
 
 http://nux.net/secret
 
