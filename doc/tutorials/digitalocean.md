@@ -76,7 +76,7 @@ $ sudo mysql_secure_installation
 Answers :
     
     - Would you like to setup VALIDATE PASSWORD plugin?: y
-    - Password validation policy: 3
+    - Password validation policy: 2
     - Change the password for root: n
     - Remove anonymous users?: y
     - Disallow root login remotely?: y
@@ -88,10 +88,10 @@ Create a new database and user
 ```bash
 $ sudo cat /root/.digitalocean_password   
 $ sudo mysql -u root -p
-$ CREATE DATABASE db_symfony DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-$ GRANT ALL ON db_symfony.* TO 'db_symfony_user'@'localhost' IDENTIFIED BY 'a_strong_password';
-$ FLUSH PRIVILEGES;
-$ EXIT;
+$ mysql> CREATE DATABASE db_symfony DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+$ mysql> GRANT ALL ON db_symfony.* TO 'db_symfony_user'@'localhost' IDENTIFIED BY 'a_strong_password';
+$ mysql> FLUSH PRIVILEGES;
+$ mysql> EXIT;
 ``` 
 #### Configure the Symfony Directory
 

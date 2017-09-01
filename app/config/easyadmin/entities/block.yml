@@ -5,10 +5,14 @@ easy_admin:
             class: Arkounay\BlockI18nBundle\Entity\PageBlock
             list:
                 fields: ['id']
+                actions:
+                    - { name: 'new', label: "Créer un bloc" }
             edit:
                 fields:
                     - '-id'
+                title: "Editer un bloc"
             form:
+                title: 'Créer un bloc'
                 fields:
                     - id
                     - { property: 'translations', label: 'Traductions', type: 'A2lix\TranslationFormBundle\Form\Type\TranslationsType', type_options: {fields: {content: {label: Description, attr: {class: 'tinymce'}}}} }
