@@ -86,7 +86,7 @@ Answers :
 Generate strong passwords (useful in next step)
 
 ```bash
-$ apg -a 1 -m 10 -x 10 
+$ apg -a 1 -m 10 -x 10
 ```
 Create a new database and user
 
@@ -194,7 +194,7 @@ or
 $ php -r "echo hash('sha1', openssl_random_pseudo_bytes(23));" #openssl required
 ```
 
-#### deploy commands
+#### Deploy commands
 
 ```bash
 $ dep deploy dev
