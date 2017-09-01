@@ -127,7 +127,7 @@ The minimum configuration :
     CustomLog ${APACHE_LOG_DIR}/symfony_access.log combined     
 </VirtualHost>
 ```          
-Enable/disable apache2 site 
+####  Enable/disable apache2 site 
 ```bash          
 $ sudo a2dissite 000-default.conf
 $ sudo a2ensite symfony.conf
