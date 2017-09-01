@@ -163,7 +163,7 @@ sudo service apache2 restart
 #### Edit deploy.php
 
 ```php
-    set('repository', 'git@github.com:...');
+set('repository', 'git@github.com:...');
 ```
 
 #### Copy hosts.php.dist to hosts.php
@@ -175,9 +175,9 @@ cp hosts.php.dist hosts.php
 #### Edit the following variables
 
 ```php
-    $host = 'host_ip';
-    $deploy_path = '/var/www/symfony';
-    $user = 'arthur';
+$host = 'host_ip';
+$deploy_path = '/var/www/symfony';
+$user = 'arthur';
 ```
 
 #### Generate a symfony token (useful for the next step)
@@ -197,8 +197,8 @@ $ php -r "echo hash('sha1', openssl_random_pseudo_bytes(23));" #openssl required
 #### deploy commands
 
 ```bash
-    $ dep deploy dev
-    $ dep symfony_requirements dev # Checking Requirements
-    $ dep d:s:u dev
-    $ dep app:users:populate dev
+$ dep deploy dev
+$ dep symfony_requirements dev # Checking Requirements
+$ dep d:s:u dev
+$ dep app:users:populate dev
 ```
