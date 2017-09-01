@@ -140,7 +140,8 @@ $ sudo service apache2 restart
 $ sudo vi /etc/apache2/conf-available/security.conf 
 ```    
     
-Edit the following lines and save :```
+Edit the following lines and save :
+
 ```apache       
 ServerTokens Prod
 ServerSignature Off
