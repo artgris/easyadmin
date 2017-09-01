@@ -19,7 +19,6 @@ after('deploy:failed', 'deploy:unlock');
 
 before('deploy:vendors', 'deploy:build-parameters');
 
-
 // on first deployment | https://github.com/deployphp/deployer/issues/126, add tty
 task('deploy:vendors', function () {
     if (!commandExist('unzip')) {

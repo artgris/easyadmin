@@ -9,9 +9,16 @@ class MainController extends Controller
 {
     /**
      * @Route("/", name="main_homepage")
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @internal param Request $request
      */
     public function indexAction()
     {
-        return $this->render('main/index.html.twig');
+        // replace this example code with whatever you need
+        return $this->render('main/index.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
     }
 }
