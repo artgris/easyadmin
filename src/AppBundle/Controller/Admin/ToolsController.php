@@ -23,9 +23,13 @@ class ToolsController extends Controller
      */
     public function clearCacheAction()
     {
-        $fs = new Filesystem();
-        $fs->remove($this->getParameter('kernel.cache_dir'));
-        $this->addFlash('success', 'message.cc');
+        $env = $this->getParameter("kernel.environment");
+        $commande = [
+            'command' => 'c:c',
+            '-e' => $env
+        ];
+        $output = $this->createCommande($commande);
+        $this->addFlash('success', $output);
 
         return $this->render(':admin/tools:clear_cache.html.twig');
     }
