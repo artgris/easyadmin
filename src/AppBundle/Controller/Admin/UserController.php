@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller\Admin;
 
-use JavierEguiluz\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 
 class UserController extends BaseAdminController
 {

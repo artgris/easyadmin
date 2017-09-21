@@ -11,8 +11,8 @@ set('keep_releases', 3);
 set('git_tty', true); // [Optional] Allocate tty for git on first deployment
 set('allow_anonymous_stats', false);
 
-add('shared_dirs', ['web/uploads', 'app/Resources/translations']);
-add('writable_dirs', ['web/uploads', 'app/Resources/translations']);
+add('shared_dirs', ['web/uploads', 'app/Resources/translations', 'web/cache']);
+add('writable_dirs', ['web/uploads', 'app/Resources/translations', 'web/cache']);
 
 // if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');

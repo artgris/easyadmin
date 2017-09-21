@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
-use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -23,10 +22,10 @@ class ToolsController extends Controller
      */
     public function clearCacheAction()
     {
-        $env = $this->getParameter("kernel.environment");
+        $env = $this->getParameter('kernel.environment');
         $commande = [
             'command' => 'c:c',
-            '-e' => $env
+            '-e' => $env,
         ];
         $output = $this->createCommande($commande);
         $this->addFlash('success', $output);
