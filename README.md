@@ -65,3 +65,11 @@ Clear the directory ``./web/build`` and push the new files compiled.
 ```
 npm run prod
 ```
+
+#### Generate icon font
+
+Add svg files in directory ``./front/assets/icons/svg``
+The command generate a scss file in ``./front/scss/typography/_iconfont.scss``.
+```
+npm run iconfont
+```
