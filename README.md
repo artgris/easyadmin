@@ -37,3 +37,31 @@ Documentation
 #### Tutorials
 
   * [How To Deploy a Symfony Application on DigitalOcean with Deployer](doc/tutorials/digitalocean.md)
+  
+Front
+-----
+#### Installation
+```
+npm install
+```
+
+#### Config livereload and webpack
+
+In ``webpack.config.js`` change the proxy property at ``line 38`` :
+```
+...
+proxy: 'yourproject.dev/app_dev.php',
+...
+```
+
+#### Livereload and compile during dev env
+```
+npm run dev
+```
+
+#### Compile for prod env
+
+Clear the directory ``./web/build`` and push the new files compiled.
+```
+npm run prod
+```
