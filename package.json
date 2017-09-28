@@ -1,0 +1,49 @@
+{
+  "name": "front-symfony",
+  "version": "1.0.0",
+  "description": "Start basic front project.",
+  "main": "/",
+  "scripts": {
+    "iconfont": "node bin/iconfont/iconfont.js",
+    "dev": "cross-env NODE_ENV=dev webpack",
+    "prod": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Masth0/front-symfony.git"
+  },
+  "keywords": [
+    "front",
+    "boilerplate"
+  ],
+  "author": "Masth0 <dev.mastho@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Masth0/front-symfony/issues"
+  },
+  "homepage": "https://github.com/Masth0/front-symfony#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.6.0",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "clean-webpack-plugin": "^0.1.16",
+    "concurrently": "^3.5.0",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.5",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "resolve-url-loader": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "susy": "^3.0.0",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webfonts-generator": "^0.4.0",
+    "webpack": "^3.5.5"
+  },
+  "browsers": ["last 2 versions", "ie > 9"]
+}
