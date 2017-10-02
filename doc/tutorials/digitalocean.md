@@ -22,6 +22,11 @@ $ export LANGUAGE=en_US.UTF-8
 $ echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
 $ echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
 ```    
+
+#### Set up Timezone if needed
+`$ timedatectl set-timezone 'Europe/Paris'`
+
+
 #### Install Additional PHP Extensions + unzip
 
 ```bash
