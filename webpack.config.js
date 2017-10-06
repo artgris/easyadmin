@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const BabelWebpackPlugin = require('babel-minify-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const Bs = require('browser-sync');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
@@ -84,7 +84,7 @@ const SCSS = {
 
 /*---- For production -----------------------------------------------------------------------*/
 if (!isDev) {
-  JS.plugins.push(new UglifyJsPlugin());
+  JS.plugins.push(new BabelWebpackPlugin());
   JS.plugins.push(new CleanWebpackPlugin(['web/build/js'], { // remove ./dist/js
     root: path.resolve('./'),
     verbose: true,
