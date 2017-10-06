@@ -36,7 +36,6 @@ const JS = {
       // browse to http://localhost:3000/app_dev.php during development,
       // ./web directory is being served
       proxy: 'yourproject.dev/app_dev.php',
-      server: { baseDir: ['web'] },
       files: ['./**/*.html.twig', './*/**.css', './build/js/**/*.js']
     })
   ]
