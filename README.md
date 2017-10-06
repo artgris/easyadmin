@@ -61,7 +61,7 @@ npm run dev
 
 #### Compile for prod env
 
-Clear the directory ``./web/build`` and push the new files compiled.
+Clear the directory ``./web/build`` and push the new files minified.
 ```
 npm run prod
 ```
