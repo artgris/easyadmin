@@ -6,7 +6,8 @@
   "scripts": {
     "iconfont": "node bin/iconfont/iconfont.js",
     "dev": "cross-env NODE_ENV=dev webpack",
-    "prod": "webpack"
+    "prod": "webpack",
+    "admin": "cross-env webpack --config webpack.config.admin.js"
   },
   "repository": {
     "type": "git",
